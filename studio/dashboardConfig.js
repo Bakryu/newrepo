@@ -25,7 +25,7 @@ export default {
                 },
                 {
                   buildHookId: '60bf64adc8c32411c313ff7e',
-                  title: 'Landing pages Website',
+                  title: 'Koydol',
                   name: 'koydol-full-website',
                   apiId: 'ec463754-7ea6-4c5e-b62f-34a5078f9963'
                 }
