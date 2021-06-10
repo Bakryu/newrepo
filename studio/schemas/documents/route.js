@@ -17,7 +17,7 @@ export default {
       description: 'Select the page that this route should point to',
       to: [
         {
-          type: 'page',
+          type: 'pagesList',
         },
       ],
     },
@@ -37,7 +37,7 @@ export default {
   preview: {
     select: {
       slug: 'slug.current',
-      pageTitle: 'page.title',
+      pageTitle: 'pages.title',
     },
     prepare({ slug, pageTitle }) {
       return {

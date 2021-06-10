@@ -8,7 +8,7 @@ const query = `
     ...,
     disallowRobot,
     includeInSitemap,
-    page->{
+    pagesList->{
       _id,
       title,
       _createdAt,

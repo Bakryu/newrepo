@@ -1,7 +1,7 @@
 export default {
-  name: 'page',
+  name: 'homePage',
   type: 'document',
-  title: 'Page',
+  title: 'Home page',
   fieldsets: [
     {
       title: 'SEO & metadata',
@@ -18,12 +18,7 @@ export default {
       name: 'content',
       type: 'array',
       title: 'Page sections',
-      of: [
-        { type: 'hero' },
-        { type: 'imageSection' },
-        { type: 'mailchimp' },
-        { type: 'textSection' },
-      ],
+      of: [{ type: 'pathwaysToOwnership' }],
     },
     {
       name: 'description',
@@ -44,7 +39,6 @@ export default {
   preview: {
     select: {
       title: 'title',
-      media: 'openGraphImage',
     },
   },
-};
+}
