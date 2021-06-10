@@ -3,6 +3,8 @@
 import pagesList from './documents/pages'
 import route from './documents/route'
 import siteConfig from './documents/siteConfig'
+import homepage from './documents/homepage'
+import testimonials from './documents/testimonials'
 // Object types
 import cta from './objects/cta'
 import embedHTML from './objects/embedHTML'
@@ -22,9 +24,6 @@ import mailchimp from './objects/mailchimp'
 import portableText from './objects/portableText'
 import simplePortableText from './objects/simplePortableText'
 import textSection from './objects/textSection'
-// pages types
-import homepage from './pagesItem/homepage'
-import testimonials from './pagesItem/testimonials'
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import createSchema from 'part:@sanity/base/schema-creator'
