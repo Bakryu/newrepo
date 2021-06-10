@@ -3,25 +3,21 @@ export default {
   type: 'document',
   title: 'Pages',
   fields: [
-    // {
-    // of: [
     {
       name: 'testimonialsPage',
       type: 'testimonialsPage',
-      title: 'Testimonials page',
+      title: 'Testimonials page'
     },
     {
       name: 'homePage',
       type: 'homePage',
-      title: 'Home page',
-    },
-    // ],
-    // },
+      title: 'Home page'
+    }
   ],
 
   preview: {
     select: {
-      title: 'title',
-    },
-  },
+      title: 'title'
+    }
+  }
 }

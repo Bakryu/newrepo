@@ -5,18 +5,18 @@ export default {
   fieldsets: [
     {
       title: 'SEO & metadata',
-      name: 'metadata',
-    },
+      name: 'metadata'
+    }
   ],
   fields: [
     {
       name: 'title',
       type: 'string',
-      title: 'Title',
-    },
+      title: 'Title'
+    }
   ],
 
   preview: {
-    title: 'title',
-  },
+    title: 'title'
+  }
 }

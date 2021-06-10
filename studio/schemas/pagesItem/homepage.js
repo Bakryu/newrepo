@@ -5,40 +5,31 @@ export default {
   fieldsets: [
     {
       title: 'SEO & metadata',
-      name: 'metadata',
-    },
+      name: 'metadata'
+    }
   ],
   fields: [
     {
       name: 'title',
       type: 'string',
-      title: 'Title',
+      title: 'Title'
     },
     {
       name: 'content',
-      type: 'array',
+      type: 'object',
       title: 'Page sections',
-      of: [{ type: 'pathwaysToOwnership' }],
-    },
-    {
-      name: 'description',
-      type: 'text',
-      title: 'Description',
-      description: 'This description populates meta-tags on the webpage',
-      fieldset: 'metadata',
-    },
-    {
-      name: 'openGraphImage',
-      type: 'image',
-      title: 'Open Graph Image',
-      description: 'Image for sharing previews on Facebook, Twitter etc.',
-      fieldset: 'metadata',
-    },
+      fields: [
+        { name: 'hero', type: 'homeHero' },
+        { name: 'pathways', type: 'homePathways' },
+        { name: 'services', type: 'homeServices' },
+        { name: 'partners', type: 'homePartners' }
+      ]
+    }
   ],
 
   preview: {
     select: {
-      title: 'title',
-    },
-  },
+      title: 'title'
+    }
+  }
 }

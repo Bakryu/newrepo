@@ -32,12 +32,12 @@ export default () =>
               S.listItem()
                 .title('Testimonials page')
                 .schemaType('testimonialsPage')
-                .child(S.documentTypeList('testimonialsPage').title('Testimonials page')),
+                .child(S.documentTypeList('testimonialsPage').title('Testimonials page'))
             ])
         ),
       S.listItem()
         .title('Routes')
         .schemaType('route')
         .child(S.documentTypeList('route').title('Routes')),
-      ...S.documentTypeListItems().filter(hiddenDocTypes),
+      ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])
