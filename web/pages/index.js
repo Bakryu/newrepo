@@ -1,13 +1,18 @@
 import client from '../client'
 import groq from 'groq'
 import PropTypes from 'prop-types'
+import '../styles/layout.css'
 
 import HeroHomePage from '../components/pageSections/HeroHomePage'
+import PathWayHomePage from '../components/pageSections/PathWayHomePage'
+import ServicesHomePage from '../components/pageSections/ServicesHomePage'
 
 const HomePage = ({title, hero, partners, pathways, services}) => {
   return (
     <>
       <HeroHomePage props={hero} />
+      <PathWayHomePage props={pathways} />
+      <ServicesHomePage props={services} />
     </>
   )
 }

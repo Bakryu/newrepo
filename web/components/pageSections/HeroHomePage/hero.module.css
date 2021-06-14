@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.heroSection {
+  padding: 102px 80px 26px;
+  background-size: cover;
+  background-position: bottom 0 right 50%;
+  color: #ffffff;
+}
+
+.title {
+  max-width: 896px;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 108%;
+  text-transform: uppercase;
+}
+
+.description {
+  margin: 24px 0 56px;
+  max-width: 416px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: #f5f5f5;
+}
+
+.proposition {
+  position: relative;
+  max-width: 194px;
+  margin: 102px auto 0 48%;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 108%;
+  text-transform: uppercase;
+}
+.propositionDecor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.heroSectionProposition {
+  position: relative;
+  padding: 205px 80px 0;
+}
+
+.propositionList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 34px 0 0 560px;
+  display: flex;
+  flex-direction: row;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  max-width: 256px;
+  width: 256px;
+  margin-right: 32px;
+}
+
+.itemNumber {
+  position: relative;
+  margin-bottom: 8px;
+  margin-left: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 108%;
+  text-transform: uppercase;
+  color: #323232;
+}
+
+.itemNumber::after {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 30px;
+  height: 0;
+  border: 1px solid #323232;
+}
+.itemDesc {
+  font-size: 14px;
+  line-height: 150%;
+  color: #707070;
+}
