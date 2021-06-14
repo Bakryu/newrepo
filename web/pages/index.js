@@ -1,22 +1,32 @@
 import client from '../client'
-// import groq from 'groq'
+import groq from 'groq'
+import PropTypes from 'prop-types'
 
-function index({ a }) {
-    // [_id == "page" && ]
-    const query = `*[_type == "pages" && title == "Home page"]`
-    // const params = {minSeats: 2}
-    
-    client.fetch(query).then((bikes) => {
-        console.log(bikes
-        )
-    })
+import HeroHomePage from '../components/pageSections/HeroHomePage'
 
-    
-    return (
-        <div>
-            Home page
-        </div>
-    )
+const HomePage = ({title, hero, partners, pathways, services}) => {
+  return (
+    <>
+      <HeroHomePage props={hero} />
+    </>
+  )
 }
 
-export default index;
+HomePage.getInitialProps = async (ctx) => {
+  return client
+    .fetch(
+      groq`*[_type == "homePage" ][0]{
+             content{title, hero, partners, pathways, services}
+          }`
+    )
+    .then((res) => ({...res.content}))
+}
+
+HomePage.propTypes = {
+  title: PropTypes.string,
+  hero: PropTypes.object,
+  partners: PropTypes.object,
+  pathways: PropTypes.object,
+  services: PropTypes.object
+}
+export default HomePage
