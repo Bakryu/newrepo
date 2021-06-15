@@ -1,5 +1,4 @@
 .buttonStyles {
-  width: 148px;
   height: 40px;
   padding: 10px 16px 10px;
   font-weight: 600;
@@ -9,29 +8,25 @@
   color: #ffffff;
   border: none;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .yellow {
   background: #f4aa16;
-}
-
-.yellow:hover {
-  background: #dc9914;
-}
-
-.yellow:active {
-  background: #c48912;
+  &:hover {
+    background: #dc9914;
+  }
+  &:active {
+    background: #c48912;
+  }
 }
 
 .black {
   background: #323232;
+  &:hover {
+    background: #2d2d2d;
+  }
+  &:active {
+    background: #141414;
+  }
 }
-
-.black:hover {
-  background: #2d2d2d;
-}
-
-.black:active {
-  background: #141414;
-}
-

@@ -1,15 +1,8 @@
-import imageUrlBuilder from '@sanity/image-url'
-import client from '../../../client'
-
-import styles from './service.module.css'
+import getUrl from '../../../helpers/getUrl'
+import styles from './service.module.scss'
 
 const ServicesHomePage = ({props}) => {
   const {title, description, servicesItemList} = props
-
-  const urlFor = (source) => {
-    const builder = imageUrlBuilder(client)
-    return builder.image(source)
-  }
 
   return (
     <section className={styles.services}>
@@ -22,7 +15,7 @@ const ServicesHomePage = ({props}) => {
           return (
             <div className={styles.servicesItem} key={idx}>
               <div className={styles.imageWrapper}>
-                <img className={styles.itemImage} src={urlFor(item.image)} />
+                <img className={styles.itemImage} src={getUrl(item.image)} alt="service image" />
               </div>
               <div className={styles.descriptionWrapper}>
                 <h3 className={styles.itemTitle}>{item.title}</h3>

@@ -1,5 +1,5 @@
 .pathWays {
-  padding: 136px 80px 0;
+  padding: 177px 80px 0;
 }
 
 .pathWaysTitle {
@@ -68,24 +68,38 @@
   text-transform: uppercase;
   color: #323232;
   transition: 0.5s;
+  &:hover {
+    color: #f4aa16;
+    .arrowsWrapper {
+      margin-left: 15px;
+      .arrowYellow {
+        display: block;
+      }
+      .arrowBlack {
+        display: none;
+      }
+    }
+  }
 }
 
-.linkName::after {
-  content: '\2794';
-  margin-left: 10px;
+.arrowsWrapper {
+  display: inline-block;
+  position: relative;
+  margin-left: 7px;
+  width: 12px;
+  height: 12px;
+  transition: 0.3s;
 }
 
-.linkName:hover::after {
-  transition: 0.5s;
-  margin-left: 20px;
-}
-.linkName:active::after {
-  color: #f4aa16;
-  margin-left: 20px;
+.arrow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
 }
 
-.linkName:active {
-  color: #f4aa16;
+.arrowYellow {
+  display: none;
 }
 
 .imageWrapper {
