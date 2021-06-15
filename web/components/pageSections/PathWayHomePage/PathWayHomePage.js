@@ -1,14 +1,13 @@
-import imageUrlBuilder from '@sanity/image-url'
-import client from '../../../client'
+import getUrl from '../../../helpers/getUrl'
 import Link from 'next/link'
-import styles from './pathway.module.css'
+import classNames from 'classnames/bind'
+import styles from './pathway.module.scss'
+import arrowBlack from './image/arrow-black.svg'
+import arrowYellow from './image/arrow-yellow.svg'
 
 const PathWayHomePage = ({props}) => {
   const {pathwaysItemList, title, pathwaysImage} = props
-  const urlFor = (source) => {
-    const builder = imageUrlBuilder(client)
-    return builder.image(source)
-  }
+
   return (
     <section className={styles.pathWays}>
       <h1 className={styles.pathWaysTitle}>{title}</h1>
@@ -21,15 +20,24 @@ const PathWayHomePage = ({props}) => {
               </h2>
               <h3 className={styles.itemSubTitle}>{item.subTitle} </h3>
               <span className={styles.itemDescription}>{item.description}</span>
-              <Link href={item.link} className={styles.link}>
-                <a className={styles.linkName}>{item.linkName}</a>
+              <Link href={item.link}>
+                <a className={styles.linkName}>
+                  {item.linkName}
+                  <div className={styles.arrowsWrapper}>
+                    <img className={classNames(styles.arrowBlack, styles.arrow)} src={arrowBlack} />
+                    <img
+                      className={classNames(styles.arrowYellow, styles.arrow)}
+                      src={arrowYellow}
+                    />
+                  </div>
+                </a>
               </Link>
             </div>
           )
         })}
       </div>
       <div className={styles.imageWrapper}>
-        <img className={styles.image} src={urlFor(pathwaysImage)} alt="section background" />
+        <img className={styles.image} src={getUrl(pathwaysImage)} alt="section background" />
       </div>
     </section>
   )
