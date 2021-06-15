@@ -15,7 +15,13 @@
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.6",
-    "@sanity/cli": "^2.0.0",
+    "@sanity/cli": "^2.11.0",
     "lerna": "^3.9.0"
+  },
+  "dependencies": {
+    "css-loader": "^5.2.6",
+    "file-loader": "^6.2.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1"
   }
 }

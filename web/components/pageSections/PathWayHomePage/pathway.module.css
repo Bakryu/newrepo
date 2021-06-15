@@ -1,0 +1,93 @@
+.pathWays {
+  padding: 136px 80px 0;
+}
+
+.pathWaysTitle {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 108%;
+  text-transform: uppercase;
+  color: #323232;
+  margin-bottom: 80px;
+}
+
+.pathWaysList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.itemWrapper:nth-child(1) {
+  color: #df635a;
+}
+.itemWrapper:nth-child(2) {
+  color: #00807f;
+}
+.itemWrapper:nth-child(3) {
+  color: #785d6b;
+}
+
+.itemWrapper {
+  max-width: 352px;
+}
+
+.itemTitle {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 108%;
+  text-transform: uppercase;
+}
+
+.itemSubTitle {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 108%;
+  text-transform: uppercase;
+  color: #323232;
+  margin: 24px 0 20px;
+}
+
+.itemDescription {
+  display: block;
+  font-size: 16px;
+  line-height: 150%;
+  color: #707070;
+  margin-bottom: 32px;
+  max-width: 280px;
+}
+
+.linkName {
+  display: inline-block;
+  margin-right: auto;
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #f4aa16;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #323232;
+  transition: 0.5s;
+}
+
+.linkName::after {
+  content: '\2794';
+  margin-left: 10px;
+}
+
+.linkName:hover::after {
+  transition: 0.5s;
+  margin-left: 20px;
+}
+.linkName:active::after {
+  color: #f4aa16;
+  margin-left: 20px;
+}
+
+.linkName:active {
+  color: #f4aa16;
+}
+
+.imageWrapper {
+  padding-top: 61px;
+}

@@ -33,7 +33,7 @@ export default {
     {
       name: 'heroBg',
       type: 'image',
-      title: 'Hero backround'
+      title: 'Hero background'
     }
   ]
 }

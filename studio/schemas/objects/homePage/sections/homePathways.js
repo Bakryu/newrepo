@@ -8,10 +8,12 @@ export default {
       type: 'string',
       title: 'Title'
     },
-    { name: 'own', type: 'pathwaysItem', title: 'Pathways Item' },
-    { name: 'grow', type: 'pathwaysItem', title: 'Pathways Item' },
-    { name: 'transition', type: 'pathwaysItem', title: 'Pathways Item' },
-
+    {
+      name: 'pathwaysItemList',
+      type: 'array',
+      title: 'Pathways Item List',
+      of: [{ name: 'pathwaysListItem ', type: 'pathwaysItem', title: 'Pathways Item' }]
+    },
     {
       name: 'pathwaysImage',
       type: 'image',
