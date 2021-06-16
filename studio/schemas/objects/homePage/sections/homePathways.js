@@ -9,6 +9,11 @@ export default {
       title: 'Title'
     },
     {
+      name: 'description',
+      type: 'string',
+      title: 'Description'
+    },
+    {
       name: 'pathwaysItemList',
       type: 'array',
       title: 'Pathways Item List',

@@ -1,0 +1,54 @@
+.partners {
+  padding: 0 80px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 108%;
+  text-transform: uppercase;
+  color: #323232;
+}
+
+.descriptionGrope {
+  max-width: 544px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 150%;
+  color: #707070;
+  margin-bottom: 20px;
+}
+
+.imageList {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: auto;
+}
+.imageWrapper {
+  width: 224px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.image {
+  transition: 0.3s;
+  filter: grayscale(100%);
+  opacity: 0.3;
+  &:hover {
+    transition: 0.3s;
+    filter: sepia(0%);
+    opacity: 1;
+  }
+}
