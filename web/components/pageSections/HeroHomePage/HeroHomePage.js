@@ -1,25 +1,31 @@
 import PropTypes from 'prop-types'
-import useResize from 'use-resizing'
+import {useSlider} from '../../../hooks'
 import getUrl from '../../../helpers/getUrl'
 import Button from '../../buttons/Button'
 import styles from './hero.module.scss'
-import propositionDecor from './images/proposition-decor.png'
 import HeroSlider from '../../sliders/HeroSlider'
-
-const paddingLeftToSlider = 561
-const widthSliderItem = 288
+import MobileSlider from '../../sliders/MobileSlider'
+import propositionDecor from './images/proposition-decor.png'
+import propositionDecorBlack from './images/proposition-decor-black.png'
 
 const HeroHomePage = ({props}) => {
-  const screenSize = useResize()
   const {title, subTitle, proposition, propositionList, heroBg} = props
-  const settings = {
-    arrows: true,
-    infinite: false,
-    speed: 500,
-    // this is an operation for dynamically calculating the number of displayed slider items
-    slidesToShow: (screenSize.width - paddingLeftToSlider) / widthSliderItem,
-    slidesToScroll: 1
-  }
+
+  const sliderItems = propositionList.map((item, idx) => {
+    return (
+      <div key={idx}>
+        <div className={styles.item}>
+          <span className={styles.itemNumber}>0{idx + 1}</span>
+          <span className={styles.itemDesc}>{item}</span>
+        </div>
+      </div>
+    )
+  })
+
+  const viewSlider = useSlider(
+    <MobileSlider items={sliderItems} buttonsStyle="heroSlider" />,
+    <HeroSlider items={sliderItems} />
+  )
 
   return (
     <>
@@ -33,23 +39,15 @@ const HeroHomePage = ({props}) => {
             className={styles.propositionDecor}
             alt="decorative element"
           />
+          <img
+            src={propositionDecorBlack}
+            className={styles.propositionDecorBlack}
+            alt="decorative element"
+          />
           {proposition}
         </h3>
       </section>
-      <section className={styles.heroSectionProposition}>
-        <HeroSlider settings={settings}>
-          {propositionList.map((item, idx) => {
-            return (
-              <div key={idx}>
-                <div className={styles.item}>
-                  <span className={styles.itemNumber}>0{idx + 1}</span>
-                  <span className={styles.itemDesc}>{item}</span>
-                </div>
-              </div>
-            )
-          })}
-        </HeroSlider>
-      </section>
+      <section className={styles.heroSectionProposition}>{viewSlider}</section>
     </>
   )
 }

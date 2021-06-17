@@ -1,111 +1,171 @@
+@import '../../../styles/variables/all.scss';
+
 .services {
-  padding: 136px 80px 171px;
+  padding-top: 35px;
+  @media (min-width: $md) {
+    padding: 136px 80px 171px;
+  }
 }
 
 .descriptionBox {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 91px;
+  flex-direction: column;
+  @media (min-width: $md) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 91px;
+  }
 }
 
 .title {
-  font-size: 48px;
-  line-height: 108%;
+  font-size: $font-size-l;
+  line-height: 130%;
   text-transform: uppercase;
   color: #323232;
+  @media (min-width: $md) {
+    font-size: $font-size-xl;
+    line-height: 108%;
+  }
 }
 
 .description {
-  max-width: 512px;
-  font-size: 18px;
-  line-height: 150%;
+  max-width: 80%;
+  font-size: $font-size-md;
+  line-height: 170%;
+  font-weight: normal;
   color: #323232;
-  opacity: 0.8;
+  margin-top: 23px;
+  margin-bottom: 66px;
+  @media (min-width: $md) {
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 512px;
+    font-size: 18px;
+    line-height: 150%;
+    opacity: 0.8;
+    font-size: 18px;
+    line-height: 108%;
+  }
 }
 
 .servicesItem {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  // text-align: center;
+  align-items: center;
+  @media (min-width: $md) {
+    justify-content: space-between;
+  }
 }
 
 .servicesItem:nth-child(even) {
   flex-direction: row-reverse;
 }
 
-.servicesList {
-  .servicesItem:nth-child(4n + 1) {
-    margin-bottom: 65px;
-    .imageWrapper {
+.servicesItem-0 {
+  .imageWrapper {
+    margin-right: 18px;
+    @media (min-width: $md) {
+      margin-bottom: 65px;
       margin-right: 40px;
       margin-left: 0;
     }
-    .itemImage {
+  }
+  .itemImage {
+    transform: translate(18px, -18px);
+    @media (min-width: $md) {
       transform: translate(32px, -32px);
     }
-    .itemBg {
-      left: 0;
-      bottom: 0;
-    }
-    .descriptionWrapper {
-      padding-bottom: 43px;
-    }
   }
-  .servicesItem:nth-child(4n + 2) {
-    margin-bottom: 130px;
-    .imageWrapper {
-      margin-right: 0;
+  .itemBg {
+    left: 0;
+    bottom: 0;
+  }
+  .descriptionWrapper {
+    padding-bottom: 43px;
+  }
+}
+.servicesItem-1 {
+  .imageWrapper {
+    margin-left: 18px;
+    margin-right: 0;
+    @media (min-width: $md) {
+      margin-bottom: 130px;
       margin-left: 40px;
     }
-    .itemImage {
+  }
+  .itemImage {
+    transform: translate(-18px, 18px);
+    @media (min-width: $md) {
       transform: translate(-32px, 32px);
     }
-    .itemBg {
-      top: 0;
-      right: 0;
-    }
   }
-  .servicesItem:nth-child(4n + 3) {
-    margin-bottom: 64px;
-    .imageWrapper {
+  .itemBg {
+    top: 0;
+    right: 0;
+  }
+}
+.servicesItem-2 {
+  .imageWrapper {
+    margin-right: 0;
+    margin-left: 18px;
+    @media (min-width: $md) {
+      margin-bottom: 64px;
       margin-right: 40px;
       margin-left: 32px;
     }
-    .itemImage {
+  }
+  .itemImage {
+    transform: translate(-18px, -18px);
+    @media (min-width: $md) {
       transform: translate(-32px, -32px);
     }
-    .itemBg {
-      right: 0;
-      bottom: 0;
-    }
-    .descriptionWrapper {
-      padding-bottom: 40px;
-    }
   }
-  .servicesItem:nth-child(4n + 4) {
-    .imageWrapper {
+  .itemBg {
+    right: 0;
+    bottom: 0;
+  }
+  .descriptionWrapper {
+    padding-bottom: 40px;
+  }
+}
+.servicesItem-3 {
+  .imageWrapper {
+    margin-left: 0;
+    margin-right: 18px;
+    @media (min-width: $md) {
       margin-right: 32px;
       margin-left: 40px;
     }
-    .itemImage {
+  }
+  .itemImage {
+    transform: translate(18px, 18px);
+    @media (min-width: $md) {
       transform: translate(32px, 32px);
     }
-    .itemBg {
-      left: 0;
-      top: 0;
-    }
-    .descriptionWrapper {
-      padding-top: 28px;
-    }
+  }
+  .itemBg {
+    left: 0;
+    top: 0;
+  }
+  .descriptionWrapper {
+    padding-top: 28px;
   }
 }
 
 .imageWrapper {
   position: relative;
-  max-width: 480px;
-  max-height: 480px;
-  margin: 30px 40px 0 0;
+  width: 270px;
+  height: 270px;
+  margin-bottom: 27px;
+
+  @media (min-width: $md) {
+    min-width: 480px;
+    min-height: 480px;
+    width: 480px;
+    height: 480px;
+    margin: 30px 40px 0 0;
+  }
 }
 
 .itemImage {
@@ -130,11 +190,15 @@
   line-height: 108%;
   text-transform: uppercase;
   color: #323232;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
+  @media (min-width: $md) {
+    margin-bottom: 24px;
+  }
 }
 
 .itemDescription {
   font-size: 16px;
   line-height: 150%;
   color: #707070;
+  min-height: 250px;
 }

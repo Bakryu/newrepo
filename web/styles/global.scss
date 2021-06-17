@@ -1,4 +1,4 @@
-@import './variables/fonts.scss';
+@import './variables/all.scss';
 html,
 * {
   font-family: $font-inter;
@@ -11,3 +11,11 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+section {
+  padding: 0 16px;
+  @media (min-width: $md) {
+    padding: 0 80px;
+  }
+}
+
+

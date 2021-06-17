@@ -14,6 +14,11 @@ export default {
       title: 'Partners Description'
     },
     {
+      name: 'linkName',
+      type: 'string',
+      title: 'Link Text'
+    },
+    {
       name: 'servicesImageListDesc',
       type: 'array',
       title: 'Services Image List Default',
