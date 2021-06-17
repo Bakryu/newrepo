@@ -23,6 +23,8 @@
   text-transform: uppercase;
   margin-bottom: 68px;
   @media (min-width: $md) {
+    margin-bottom: 0;
+    text-align: left;
     line-height: 108%;
     font-size: $font-size-xxl;
   }

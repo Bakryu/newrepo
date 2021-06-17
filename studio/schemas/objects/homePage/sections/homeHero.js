@@ -34,6 +34,18 @@ export default {
       name: 'heroBg',
       type: 'image',
       title: 'Hero background'
+    },
+    {
+      name: 'heroVideoMob',
+      type: 'file',
+      title: 'Hero Video Mobile',
+      description: 'upload video format "mp4" to this field'
+    },
+    {
+      name: 'heroVideo',
+      type: 'file',
+      title: 'Hero Video',
+      description: 'upload video format "webm" to this field'
     }
   ]
 }

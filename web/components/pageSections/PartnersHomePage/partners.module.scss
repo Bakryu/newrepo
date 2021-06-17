@@ -17,6 +17,7 @@
 }
 
 .title {
+  white-space: nowrap;
   font-weight: bold;
   font-size: $font-size-l;
   line-height: 120%;
@@ -43,7 +44,7 @@
   margin-bottom: 33px;
   @media (min-width: $md) {
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 34px;
   }
 }
 
@@ -60,6 +61,9 @@
   flex-wrap: wrap;
   flex-basis: auto;
   justify-content: center;
+  @media (min-width: $md) {
+    margin-top: 48px;
+  }
 }
 .imageWrapper {
   width: 224px;
@@ -73,12 +77,14 @@
   }
 }
 .image {
-  transition: 0.3s;
-  filter: grayscale(100%);
-  opacity: 0.3;
-  &:hover {
+  @media (min-width: $md) {
     transition: 0.3s;
-    filter: sepia(0%);
-    opacity: 1;
+    filter: grayscale(100%);
+    opacity: 0.3;
+    &:hover {
+      transition: 0.3s;
+      filter: sepia(0%);
+      opacity: 1;
+    }
   }
 }

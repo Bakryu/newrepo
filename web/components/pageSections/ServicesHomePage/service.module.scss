@@ -13,11 +13,12 @@
   @media (min-width: $md) {
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 91px;
+    margin-bottom: 97px;
   }
 }
 
 .title {
+  white-space: nowrap;
   font-size: $font-size-l;
   line-height: 130%;
   text-transform: uppercase;
@@ -83,6 +84,9 @@
   }
   .descriptionWrapper {
     padding-bottom: 43px;
+    @media (min-width: $md) {
+      padding-bottom: 106px;
+    }
   }
 }
 .servicesItem-1 {
@@ -103,6 +107,11 @@
   .itemBg {
     top: 0;
     right: 0;
+  }
+  .descriptionWrapper {
+    @media (min-width: $md) {
+      padding-bottom: 132px;
+    }
   }
 }
 .servicesItem-2 {
@@ -125,8 +134,12 @@
     right: 0;
     bottom: 0;
   }
+
   .descriptionWrapper {
     padding-bottom: 40px;
+    @media (min-width: $md) {
+      padding-bottom: 98px;
+    }
   }
 }
 .servicesItem-3 {
@@ -200,5 +213,7 @@
   font-size: 16px;
   line-height: 150%;
   color: #707070;
-  min-height: 250px;
+  @media (max-width: $md) {
+    min-height: 250px;
+  }
 }

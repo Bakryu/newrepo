@@ -61,3 +61,10 @@ HeroHomePage.propTypes = {
 }
 
 export default HeroHomePage
+
+// <div class="video-wrapper">
+//         <video width="100%"  controls>
+//         <source src="./assets/video/video.webm" type="video/webm">
+//         <source src="./assets/video/video.mp4" type="video/mp4">
+//         </video>
+//     </div>

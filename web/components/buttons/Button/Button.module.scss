@@ -20,8 +20,9 @@
 }
 
 .yellow {
-  height: 56px;
-
+  @media (max-width: $md) {
+    height: 56px;
+  }
   background: #f4aa16;
   &:hover {
     background: #dc9914;
