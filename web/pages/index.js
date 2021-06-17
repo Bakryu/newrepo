@@ -2,12 +2,12 @@ import Head from 'next/head'
 import client from '../client'
 import groq from 'groq'
 import PropTypes from 'prop-types'
-import '../styles/layout.scss'
 
 import HeroHomePage from '../components/pageSections/HeroHomePage'
 import PathWayHomePage from '../components/pageSections/PathWayHomePage'
 import ServicesHomePage from '../components/pageSections/ServicesHomePage'
-
+import PartnersHomePage from '../components/pageSections/PartnersHomePage'
+import '../styles/global.scss'
 const HomePage = ({title, hero, partners, pathways, services}) => {
   return (
     <>
@@ -27,6 +27,7 @@ const HomePage = ({title, hero, partners, pathways, services}) => {
       <HeroHomePage props={hero} />
       <PathWayHomePage props={pathways} />
       <ServicesHomePage props={services} />
+      <PartnersHomePage props={partners} />
     </>
   )
 }
