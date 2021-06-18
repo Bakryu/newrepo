@@ -95,6 +95,9 @@
     position: relative;
     padding: 34px 0 0 561px;
   }
+  @media (min-width: 1600px) {
+    padding-left: 40% !important;
+  }
 }
 
 .item {

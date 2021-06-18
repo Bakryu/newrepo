@@ -16,5 +16,8 @@ section {
   @media (min-width: $md) {
     padding: 0 80px;
   }
+  @media (min-width: 1600px) {
+    padding-left: calc(50% - 720px) !important;
+    padding-right: calc(50% - 720px) !important;
+  }
 }
-

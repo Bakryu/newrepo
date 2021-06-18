@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import Slick from 'react-slick'
-import useResize from 'use-resizing'
+import getHeroSliderSize from '../../../helpers/getHeroSliderSize'
 
 import Arrow from './components/Arrow'
 
@@ -11,15 +11,11 @@ import arrowLeft from '../images/arrow-left.svg'
 import arrowRight from '../images/arrow-right.svg'
 
 const HeroSlider = ({items, settings, instance}) => {
-  const paddingLeftToSlider = 561
-  const widthSliderItem = 288
-  const screenSize = useResize()
   const defaultSettings = {
     prevArrow: <Arrow direction="previous" arrowImage={arrowLeft} />,
     nextArrow: <Arrow direction="next" arrowImage={arrowRight} />,
     arrows: true,
-    // this is an operation for dynamically calculating the number of displayed slider items
-    slidesToShow: (screenSize.width - paddingLeftToSlider) / widthSliderItem,
+    slidesToShow: getHeroSliderSize(),
     lazyLoad: true,
     infinite: false,
     speed: 500,

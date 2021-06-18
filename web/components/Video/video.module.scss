@@ -12,6 +12,9 @@
     left: 80px;
     bottom: -205px;
   }
+  @media (min-width: 1600px) {
+    left: calc(50% - 720px);
+  }
 }
 
 .video {
