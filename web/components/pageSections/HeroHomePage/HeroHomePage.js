@@ -5,11 +5,12 @@ import Button from '../../buttons/Button'
 import styles from './hero.module.scss'
 import HeroSlider from '../../sliders/HeroSlider'
 import MobileSlider from '../../sliders/MobileSlider'
+import Video from '../../Video'
 import propositionDecor from './images/proposition-decor.png'
 import propositionDecorBlack from './images/proposition-decor-black.png'
 
 const HeroHomePage = ({props}) => {
-  const {title, subTitle, proposition, propositionList, heroBg} = props
+  const {title, subTitle, proposition, propositionList, heroBg, heroVideo, videoPoster} = props
 
   const sliderItems = propositionList.map((item, idx) => {
     return (
@@ -46,6 +47,7 @@ const HeroHomePage = ({props}) => {
           />
           {proposition}
         </h3>
+        <Video homePageVideo={heroVideo.homePageVideo} videoPoster={videoPoster} />
       </section>
       <section className={styles.heroSectionProposition}>{viewSlider}</section>
     </>
@@ -61,10 +63,3 @@ HeroHomePage.propTypes = {
 }
 
 export default HeroHomePage
-
-// <div class="video-wrapper">
-//         <video width="100%"  controls>
-//         <source src="./assets/video/video.webm" type="video/webm">
-//         <source src="./assets/video/video.mp4" type="video/mp4">
-//         </video>
-//     </div>

@@ -23,6 +23,11 @@ const HomePage = ({title, hero, partners, pathways, services}) => {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <HeroHomePage props={hero} />
       <PathWayHomePage props={pathways} />
@@ -36,8 +41,11 @@ HomePage.getInitialProps = async (ctx) => {
   return client
     .fetch(
       groq`*[_type == "homePage" ][0]{
-             content{title, hero, partners, pathways, services}
-          }`
+            content{title,partners, pathways,services,
+            hero{title, subTitle, proposition,
+            propositionList,heroBg,videoPoster,
+            heroVideo{"homePageVideo": asset->url}}
+          }}`
     )
     .then((res) => ({...res.content}))
 }

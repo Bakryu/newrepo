@@ -11,7 +11,7 @@ import styles from './partners.module.scss'
 const PartnersHomePage = ({props}) => {
   const {title, subTitle, servicesImageListDesc, linkName} = props
 
-  const {rows, slidesToShow, centerMode} = getPartnersQuantity()
+  const {rows, slidesToShow} = getPartnersQuantity()
 
   const serviceList = servicesImageListDesc.map((image, idx) => {
     return (
@@ -26,7 +26,7 @@ const PartnersHomePage = ({props}) => {
       settings={{
         rows: rows,
         slidesToShow: slidesToShow,
-        centerMode: centerMode
+        centerMode: false
       }}
     />
   )
@@ -35,7 +35,7 @@ const PartnersHomePage = ({props}) => {
     <section className={styles.partners}>
       <div className={styles.textWrapper}>
         <h1 className={styles.title}>{title}</h1>
-        <div className={styles.descriptionGrope}>
+        <div className={styles.descriptionGroup}>
           <h2 className={styles.description}>{subTitle}</h2>
           <LinkTo link={TESTIMONIALS} linkName={linkName} />
         </div>

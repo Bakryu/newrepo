@@ -1,7 +1,6 @@
 @import '../../../styles/variables/all.scss';
 
 body section .buttons {
-  padding-bottom: 50px;
   &::before {
     content: '';
     display: block;
@@ -13,6 +12,9 @@ body section .buttons {
 }
 
 body section .heroSlider {
+  padding-left: 0;
+  padding-right: 0;
+
   &::before {
     top: 42px;
   }

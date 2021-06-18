@@ -3,7 +3,7 @@
 .pathWays {
   padding-top: 98px;
   @media (min-width: $md) {
-    padding: 177px 80px 0;
+    padding: 155px 80px 0;
   }
 }
 
@@ -12,8 +12,12 @@
   font-size: $font-size-l;
   line-height: 120%;
   text-transform: uppercase;
-  color: #323232;
+  color: $black-color;
+  @media (min-width: $sm) {
+    text-align: center;
+  }
   @media (min-width: $md) {
+    text-align: left;
     margin-bottom: 80px;
     font-size: $font-size-xl;
     line-height: 108%;
@@ -32,9 +36,13 @@
 .pathWaysList {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   @media (min-width: $md) {
     flex-direction: row;
     justify-content: space-between;
+  }
+  @media (min-width: $lg) {
+    margin: 0;
   }
 }
 
@@ -53,7 +61,9 @@
   flex-direction: column;
   justify-content: space-between;
   max-width: 352px;
+  padding: 0 5px;
   @media (max-width: $md) {
+    padding: 0;
     margin-bottom: 50px;
   }
 }
@@ -83,7 +93,7 @@
   display: block;
   font-size: $font-size-md;
   line-height: 150%;
-  color: #707070;
+  color: $grey-color;
   margin-bottom: 20px;
   max-width: 280px;
   @media (min-width: $md) {
