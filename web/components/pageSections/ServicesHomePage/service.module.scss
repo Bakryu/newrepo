@@ -1,7 +1,7 @@
 @import '../../../styles/variables/all.scss';
 
 .services {
-  padding-top: 35px;
+  padding: 35px 0 0;
   @media (min-width: $md) {
     padding: 136px 80px 171px;
   }
@@ -10,7 +10,9 @@
 .descriptionBox {
   display: flex;
   flex-direction: column;
+  padding: 0 16px;
   @media (min-width: $md) {
+    padding: 0;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 97px;
@@ -60,7 +62,9 @@
 .servicesItem {
   display: flex;
   align-items: center;
+  padding: 0 16px;
   @media (min-width: $md) {
+    padding: 0;
     flex-direction: column;
     justify-content: space-between;
   }

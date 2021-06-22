@@ -3,8 +3,8 @@
   position: absolute;
   left: 16px;
   bottom: -131px;
-  max-width: 288px;
-  max-height: 194px;
+  max-width: 400px;
+  width: calc(100vw - 32px);
   overflow: hidden;
   @media (min-width: $md) {
     max-width: 416px;

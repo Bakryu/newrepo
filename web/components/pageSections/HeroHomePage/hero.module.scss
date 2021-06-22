@@ -87,9 +87,7 @@
 }
 
 .heroSectionProposition {
-  padding-top: 260px;
-  padding-bottom: 48px;
-  padding-right: 0;
+  padding: 260px 0 48px;
   width: 100%;
   @media (min-width: 820px) {
     position: relative;
@@ -104,7 +102,7 @@
   display: flex;
   flex-direction: column;
   max-width: 216px;
-  padding: 0 5px;
+  padding: 0 16px;
   @media (min-width: 820px) {
     max-width: 256px;
     width: 256px;

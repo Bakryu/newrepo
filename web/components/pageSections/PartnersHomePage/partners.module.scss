@@ -1,16 +1,18 @@
 @import '../../../styles/variables/all.scss';
 
 .partners {
-  padding-top: 45px;
+  padding: 45px 0 25px;
   @media (min-width: $md) {
-    padding-top: 0;
+    padding: 0;
   }
 }
 
 .textWrapper {
   display: flex;
   flex-direction: column;
+  padding: 0 16px;
   @media (min-width: $md) {
+    padding: 0 80px;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -76,6 +78,7 @@
   }
 }
 .imageWrapper {
+  padding-left: 16px;
   width: 224px;
   height: 86px;
   display: flex;
@@ -84,6 +87,9 @@
   @media (min-width: $md) {
     height: 110px;
     margin-bottom: 40px;
+    @media (min-width: 820px) {
+      padding-left: 0;
+    }
   }
 }
 .image {
