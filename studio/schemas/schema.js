@@ -2,9 +2,12 @@
 // Document types
 import pagesList from './documents/pages'
 import route from './documents/route'
+import forms from './documents/forms'
 import siteConfig from './documents/siteConfig'
 import homepage from './documents/homepage'
 import testimonials from './documents/testimonials'
+import privacyPolicyPage from './documents/privacyPolicyPage'
+import termsOfUsePage from './documents/termsOfUsePage'
 // Object types
 import cta from './objects/cta'
 import embedHTML from './objects/embedHTML'
@@ -17,6 +20,7 @@ import homeHero from './objects/homePage/sections/homeHero'
 import homePartners from './objects/homePage/sections/homePartners'
 import homePathways from './objects/homePage/sections/homePathways'
 import homeServices from './objects/homePage/sections/homeServices'
+import connectWithUs from './objects/forms/connectWithUs'
 import imageSection from './objects/imageSection'
 import internalLink from './objects/internalLink'
 import link from './objects/link'
@@ -38,10 +42,13 @@ export default createSchema({
     route,
     siteConfig,
     pagesList,
+    forms,
 
     // pages
     homepage,
     testimonials,
+    privacyPolicyPage,
+    termsOfUsePage,
 
     // page elements
     homeHero,
@@ -51,6 +58,7 @@ export default createSchema({
     pathwaysItem,
     servicesItem,
 
+    connectWithUs,
     cta,
     embedHTML,
     figure,

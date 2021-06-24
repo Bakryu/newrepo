@@ -83,9 +83,16 @@ export default {
       ]
     },
     {
-      name: 'footerText',
-      type: 'simplePortableText',
-      fieldset: 'footer'
+      name: 'buttons',
+      type: 'object',
+      title: 'Button texts',
+      fields: [
+        {
+          name: 'buttonSendRequest',
+          type: 'string',
+          title: 'Send request'
+        }
+      ]
     }
   ]
 }

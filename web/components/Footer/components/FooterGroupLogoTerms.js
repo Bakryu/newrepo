@@ -13,10 +13,10 @@ const FooterGroupLogoTerms = ({logoData, terms}) => {
       </Link>
       <div className={styles.termsWrapper}>
         <div className={styles.termsPolicyWrapper}>
-          <Link link={privacyPolicy.link}>
+          <Link href={privacyPolicy.link}>
             <a className={styles.privacyPolicy}>{privacyPolicy.name}</a>
           </Link>
-          <Link link={termsOfUse.link}>
+          <Link href={termsOfUse.link}>
             <a className={styles.termsOfUse}>{termsOfUse.name}</a>
           </Link>
         </div>

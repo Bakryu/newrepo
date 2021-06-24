@@ -12,6 +12,16 @@ export default {
       name: 'homePage',
       type: 'homePage',
       title: 'Home page'
+    },
+    {
+      name: 'termsOfUsePage',
+      type: 'termsOfUsePage',
+      title: 'Terms of Use page'
+    },
+    {
+      name: 'privacyPolicyPage',
+      type: 'privacyPolicyPage',
+      title: 'Privacy Policy'
     }
   ],
 

@@ -11,15 +11,18 @@
   line-height: 150%;
   text-transform: uppercase;
   color: $black-color;
-  transition: 0.5s;
+  transition: 0.3s;
   &:hover {
-    color: $yellow-color;
     .arrowsWrapper {
       margin-left: 15px;
-      svg {
-        path {
-          fill: $yellow-color;
-        }
+    }
+  }
+  &:active {
+    color: $yellow-color;
+    transition: 0s;
+    svg {
+      path {
+        fill: $yellow-color;
       }
     }
   }

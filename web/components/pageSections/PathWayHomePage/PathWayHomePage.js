@@ -1,5 +1,7 @@
 import getUrl from '../../../helpers/getUrl'
+import classNames from 'classnames/bind'
 import LinkTo from '../../LinkTo'
+import DecorElement from '../../DecorElement'
 import styles from './pathway.module.scss'
 
 const PathWayHomePage = ({props}) => {
@@ -24,7 +26,22 @@ const PathWayHomePage = ({props}) => {
           })}
         </div>
         <div className={styles.imageWrapper}>
-          <img className={styles.image} src={getUrl(pathwaysImage)} alt="section background" />
+          <div className={styles.imageFrontWrapper}>
+            <img className={styles.image} src={getUrl(pathwaysImage)} alt="section background" />
+          </div>
+          <div className={styles.decorWrapper}>
+            <img className={styles.image} src={getUrl(pathwaysImage)} alt="section background" />
+          </div>
+          <div className={classNames(styles.decorBoxWrapper, styles.decorRight)}>
+            <DecorElement />
+            <DecorElement color="milk" />
+            <DecorElement color="spirit" />
+          </div>
+          <div className={classNames(styles.decorBoxWrapper, styles.decorLeft)}>
+            <DecorElement />
+            <DecorElement color="milk" />
+            <DecorElement color="spirit" />
+          </div>
         </div>
       </div>
     </section>

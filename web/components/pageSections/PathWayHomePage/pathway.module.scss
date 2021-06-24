@@ -1,5 +1,9 @@
 @import '../../../styles/variables/all.scss';
 
+$step100: -100px;
+$step150: -150px;
+$step200: -200px;
+
 .pathWays {
   padding-top: 98px;
   @media (min-width: $md) {
@@ -108,34 +112,148 @@
 
   height: 272px;
   margin: 27px 0 34px;
-  padding-right: 16px;
-  overflow: hidden;
+  margin-right: 15px;
 
   @media (min-width: 420px) {
-    margin: 27px auto 34px;
     display: inline-block;
+    height: 380px;
+  }
+  @media (min-width: 600px) {
+    height: 480px;
   }
 
-  @media (min-width: 769px) {
+  @media (min-width: $md) {
     margin: 61px 0 0;
     height: 440px;
+    padding-right: 0;
   }
   @media (min-width: 1440px) {
     height: 600px;
   }
 }
 .image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   height: 100%;
+
   @media (min-width: 420px) {
     margin: 0 auto;
-    height: 100%;
   }
-  @media (min-width: 769px) {
-    height: auto;
+  @media (min-width: $md) {
     margin: 0;
     width: 100%;
+    height: auto;
     position: absolute;
-    top: -160px;
+  }
+  @media (min-width: $lg) {
+    bottom: $step150;
+  }
+}
+
+.imageFrontWrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.decorWrapper {
+  position: absolute;
+  right: 0;
+  bottom: 100px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  transform: translate(20px);
+  z-index: 1;
+
+  .image {
+    position: absolute;
     right: 0;
+    bottom: -80px;
+    height: 274px;
+  }
+
+  @media (min-width: 420px) {
+    .image {
+      height: 380px;
+    }
+  }
+  @media (min-width: $md) {
+    bottom: 320px;
+    width: 40px;
+    height: 40px;
+    transform: translate(40px);
+
+    .image {
+      right: 0;
+      height: auto;
+      bottom: -280px;
+      width: calc(100vw - 160px);
+    }
+  }
+  @media (min-width: $lg) {
+    .image {
+      bottom: -430px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .image {
+      width: 1440px;
+    }
+  }
+}
+.decorBoxWrapper {
+  position: absolute;
+
+  width: 40px;
+  height: 40px;
+
+  :nth-child(1) {
+    top: 0;
+    right: 0;
+  }
+  :nth-child(2) {
+    left: 0;
+    bottom: 0;
+  }
+  :nth-child(3) {
+    right: 0;
+    bottom: 0;
+  }
+
+  @media (min-width: $md) {
+    width: 80px;
+    height: 80px;
+  }
+}
+.decorRight {
+  bottom: 80px;
+  right: 0;
+  @media (min-width: $md) {
+    bottom: 280px;
+    right: 0;
+  }
+}
+.decorLeft {
+  display: none;
+  @media (min-width: $md) {
+    display: block;
+    transform: scaleY(-1);
+    top: 280px;
+    left: 0;
+  }
+}
+
+.decorBox {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  @media (min-width: $md) {
+    width: 40px;
+    height: 40px;
   }
 }

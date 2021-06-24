@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import getUrl from '../../../helpers/getUrl'
 import {useSlider} from '../../../hooks'
 import getPartnersQuantity from '../../../helpers/getPartnersQuantity'
-import {TESTIMONIALS} from '../../../constants'
+import {TESTIMONIALS} from '../../../constants/links'
 
 import MobileSlider from '../../sliders/MobileSlider'
 import LinkTo from '../../LinkTo'

@@ -4,7 +4,16 @@ import { MdDashboard, MdSettings } from 'react-icons/md'
 // We filter document types defined in structure to prevent
 // them from being listed twice
 const hiddenDocTypes = (listItem) =>
-  !['pagesList', 'route', 'site-config', 'testimonialsPage', 'homePage'].includes(listItem.getId())
+  ![
+    'pagesList',
+    'route',
+    'site-config',
+    'testimonialsPage',
+    'homePage',
+    'formList',
+    'privacyPolicyPage',
+    'termsOfUsePage'
+  ].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -17,11 +26,7 @@ export default () =>
       S.listItem()
         .title('Pages')
         .icon(MdDashboard)
-        // .schemaType('pagesList')
         .child(
-          // S.documentTypeList('pagesList')
-          // .title('Pages')
-
           S.list()
             .title('Pages')
             .items([
@@ -32,7 +37,30 @@ export default () =>
               S.listItem()
                 .title('Testimonials page')
                 .schemaType('testimonialsPage')
-                .child(S.documentTypeList('testimonialsPage').title('Testimonials page'))
+                .child(S.documentTypeList('testimonialsPage').title('Testimonials page')),
+              S.listItem()
+                .title('Privacy Policy')
+                .schemaType('privacyPolicyPage')
+                .child(S.documentTypeList('privacyPolicyPage').title('Privacy Policy')),
+              S.listItem()
+                .title('Terms of Use')
+                .schemaType('termsOfUsePage')
+                .child(S.documentTypeList('termsOfUsePage').title('Terms of Use'))
+            ])
+        ),
+      S.listItem()
+        .title('Forms')
+        .icon(MdDashboard)
+        .child(
+          S.list()
+            .title('Form')
+            .items([
+              S.listItem()
+                .title('Connect with us Form')
+                .schemaType('formList')
+                .child(
+                  S.documentTypeList('formList').id('connectWithUs').title('Connect with us Form')
+                )
             ])
         ),
       S.listItem()
