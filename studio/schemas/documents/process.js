@@ -1,11 +1,11 @@
 import SLUGS from '../../constants/slugs'
 
 export default {
-  name: 'termsOfUsePage',
+  name: 'processPage',
   type: 'document',
-  title: 'Terms of Use',
+  title: 'Process',
   initialValue: {
-    pageSlug: SLUGS.TERMS_OF_USE
+    pageSlug: SLUGS.PROCESS
   },
   fields: [
     {

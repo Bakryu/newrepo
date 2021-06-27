@@ -1,11 +1,11 @@
 import SLUGS from '../../constants/slugs'
 
 export default {
-  name: 'termsOfUsePage',
+  name: 'faqPage',
   type: 'document',
-  title: 'Terms of Use',
+  title: 'FAQ',
   initialValue: {
-    pageSlug: SLUGS.TERMS_OF_USE
+    pageSlug: SLUGS.FAQ
   },
   fields: [
     {

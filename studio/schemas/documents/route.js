@@ -7,9 +7,10 @@ export default {
   icon: MdLink,
   fields: [
     {
-      name: 'slug',
-      type: 'slug',
-      title: 'Slug'
+      name: 'link',
+      type: 'string',
+      title: 'Link',
+      description: 'leave the field blank to use the default link'
     },
     {
       name: 'page',
@@ -24,7 +25,34 @@ export default {
         },
         {
           type: 'privacyPolicyPage'
-        }
+        },
+        {
+          type: 'availableMarketsPage'
+        },
+        {
+          type: 'blogPage'
+        },
+        {
+          type: 'commercialFlooringPage'
+        },
+        {
+          type: 'faqPage'
+        },
+        {
+          type: 'growPage'
+        },
+        {
+          type: 'ownPage'
+        },
+        {
+          type: 'processPage'
+        },
+        {
+          type: 'testimonialsPage'
+        },
+        {
+          type: 'transitionPage'
+        },
       ]
     },
     {
@@ -42,12 +70,12 @@ export default {
   ],
   preview: {
     select: {
-      slug: 'slug.current',
-      pageTitle: 'pages.title'
+      slug: 'page.pageSlug',
+      pageTitle: 'page.title'
     },
     prepare({ slug, pageTitle }) {
       return {
-        title: slug === '/' ? '/' : `/${slug}`,
+        title: slug === '/' ? '/' : `${slug}`,
         subtitle: `Page: ${pageTitle}`
       }
     }

@@ -1,11 +1,11 @@
 import SLUGS from '../../constants/slugs'
 
 export default {
-  name: 'termsOfUsePage',
+  name: 'growPage',
   type: 'document',
-  title: 'Terms of Use',
+  title: 'Grow',
   initialValue: {
-    pageSlug: SLUGS.TERMS_OF_USE
+    pageSlug: SLUGS.GROW
   },
   fields: [
     {

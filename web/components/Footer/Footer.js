@@ -8,14 +8,14 @@ const Footer = ({data}) => {
   const {logoData, firstColumn, secondColumn, contacts, terms} = data
 
   return (
-    <section className={styles.footer}>
+    <footer className={styles.footer}>
       <FooterGroupLogoTerms logoData={logoData} terms={terms} />
       <div className={styles.descriptionWrapper}>
         <FooterGroupRoute list={firstColumn} />
         <FooterGroupRoute list={secondColumn} />
         <FooterGroupContacts contacts={contacts} />
       </div>
-    </section>
+    </footer>
   )
 }
 

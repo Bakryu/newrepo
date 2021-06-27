@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Input from '../../../Input'
 import Button from '../../../buttons/Button'
-import {PRIVACY_POLICY, TERMS_OF_USE} from '../../../../constants/links'
+import SLUGS from '../../../../constants/slugs'
 import styles from './form.module.scss'
 
-const Form = ({inputList, buttonText, agreements, privacyPolicy, and, termsOfUse}) => {
+const Form = ({inputList, buttonText, agreements, privacyPolicy, termsOfUse}) => {
   const {email, name, phoneNumber, zipCode} = inputList //placeholders
   return (
     <form className={styles.form}>
@@ -16,11 +16,11 @@ const Form = ({inputList, buttonText, agreements, privacyPolicy, and, termsOfUse
       <Button color="black" onclick={() => {}} text={buttonText} />
       <span className={styles.agreements}>
         {agreements}
-        <Link href={PRIVACY_POLICY}>
+        <Link href={SLUGS.PRIVACY_POLICY}>
           <a className={styles.agreementsLink}>{privacyPolicy}</a>
         </Link>{' '}
-        {and}
-        <Link href={TERMS_OF_USE}>
+        and{' '}
+        <Link href={SLUGS.TERMS_OF_USE}>
           <a className={styles.agreementsLink}>{termsOfUse}</a>
         </Link>{' '}
       </span>

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import getUrl from '../../../helpers/getUrl'
 import {useSlider} from '../../../hooks'
 import getPartnersQuantity from '../../../helpers/getPartnersQuantity'
-import {TESTIMONIALS} from '../../../constants/links'
+import SLUGS from '../../../constants/slugs'
 
 import MobileSlider from '../../sliders/MobileSlider'
 import LinkTo from '../../LinkTo'
@@ -37,7 +37,7 @@ const PartnersHomePage = ({props}) => {
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.descriptionGroup}>
           <h2 className={styles.description}>{subTitle}</h2>
-          <LinkTo link={TESTIMONIALS} linkName={linkName} />
+          <LinkTo link={SLUGS.TESTIMONIALS} linkName={linkName} />
         </div>
       </div>
       <div className={styles.listWrapper}>

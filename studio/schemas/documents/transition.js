@@ -1,11 +1,11 @@
 import SLUGS from '../../constants/slugs'
 
 export default {
-  name: 'termsOfUsePage',
+  name: 'transitionPage',
   type: 'document',
-  title: 'Terms of Use',
+  title: 'Transition',
   initialValue: {
-    pageSlug: SLUGS.TERMS_OF_USE
+    pageSlug: SLUGS.TRANSITION
   },
   fields: [
     {

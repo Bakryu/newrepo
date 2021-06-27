@@ -1,11 +1,11 @@
 import SLUGS from '../../constants/slugs'
 
 export default {
-  name: 'termsOfUsePage',
+  name: 'commercialFlooringPage',
   type: 'document',
-  title: 'Terms of Use',
+  title: 'Commercial Flooring',
   initialValue: {
-    pageSlug: SLUGS.TERMS_OF_USE
+    pageSlug: SLUGS.COMMERCIAL_FLOORING
   },
   fields: [
     {
