@@ -7,6 +7,7 @@ const query = `
 {
   "routes": *[_type == "route"] {
     ...,
+    "slug":page->pageSlug,
     disallowRobot,
     includeInSitemap,
     pagesList->{
@@ -42,17 +43,22 @@ module.exports = withCSS(
       importLoaders: 1,
       localIdentName: isProduction ? '[hash:base64:5]' : '[name]__[local]___[hash:base64:5]'
     },
-    // exportPathMap: function () {
-    //   return client.fetch(query).then((res) => {
-    //     const {routes = []} = res
-    //     const nextRoutes = {
-    //       // Routes imported from sanity
-    //       ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {}),
-    //       '/custom-page': {page: '/CustomPage'}
-    //     }
-    //     return nextRoutes
-    //   })
-    // },
+    exportPathMap: function () {
+      return client.fetch(query).then((res) => {
+        const {routes = []} = res
+        console.log(res)
+        const nextRoutes = {
+          // Routes imported from sanity
+          ...routes
+            .filter(({slug}) => {
+              return slug.current
+            })
+            .reduce(reduceRoutes, {}),
+          '/': {page: '/'}
+        }
+        return nextRoutes
+      })
+    },
     webpack(config, options) {
       config.module.rules.push({
         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
