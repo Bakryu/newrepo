@@ -17,7 +17,13 @@ export default {
       description: 'Select the page that this route should point to',
       to: [
         {
-          type: 'pagesList'
+          type: 'homePage'
+        },
+        {
+          type: 'termsOfUsePage'
+        },
+        {
+          type: 'privacyPolicyPage'
         }
       ]
     },

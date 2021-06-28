@@ -1,2 +1,4 @@
 import useSlider from './useSlider'
-export {useSlider}
+import useInput from './useInput'
+import useValidation from './useValidation'
+export {useSlider, useInput, useValidation}

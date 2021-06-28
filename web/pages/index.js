@@ -8,10 +8,10 @@ import PathWayHomePage from '../components/pageSections/PathWayHomePage'
 import ServicesHomePage from '../components/pageSections/ServicesHomePage'
 import PartnersHomePage from '../components/pageSections/PartnersHomePage'
 
-import '../styles/global.scss'
-const HomePage = ({title, hero, partners, pathways, services}) => {
+
+const HomePage = ({title, hero, partners, pathways, services, config}) => {
   return (
-    <MainContainer title={title}>
+    <MainContainer title={title} config={config}>
       <HeroHomePage props={hero} />
       <PathWayHomePage props={pathways} />
       <ServicesHomePage props={services} />
@@ -24,13 +24,13 @@ HomePage.getInitialProps = async (ctx) => {
   return client
     .fetch(
       groq`*[_type == "homePage" ][0]{
-            content{title,partners, pathways,services,
+            title,partners, pathways,services,
             hero{title, subTitle, proposition,
             propositionList,heroBg,videoPoster,
             heroVideo{"homePageVideo": asset->url}}
-          }}`
+          }`
     )
-    .then((res) => ({...res.content}))
+    .then((res) => ({...res}))
 }
 
 HomePage.propTypes = {
