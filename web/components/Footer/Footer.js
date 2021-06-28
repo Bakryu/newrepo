@@ -4,15 +4,13 @@ import FooterGroupContacts from './components/FooterGroupContacts'
 import FooterGroupLogoTerms from './components/FooterGroupLogoTerms'
 import styles from './footer.module.scss'
 
-const Footer = ({data}) => {
-  const {logoData, firstColumn, secondColumn, contacts, terms} = data
-
+const Footer = ({footerNavigation, contacts, terms, logo}) => {
   return (
     <footer className={styles.footer}>
-      <FooterGroupLogoTerms logoData={logoData} terms={terms} />
+      <FooterGroupLogoTerms logoData={logo} terms={terms} />
       <div className={styles.descriptionWrapper}>
-        <FooterGroupRoute list={firstColumn} />
-        <FooterGroupRoute list={secondColumn} />
+        <FooterGroupRoute list={footerNavigation.firstColumn.group} />
+        <FooterGroupRoute list={footerNavigation.secondColumn.group} />
         <FooterGroupContacts contacts={contacts} />
       </div>
     </footer>
@@ -20,11 +18,11 @@ const Footer = ({data}) => {
 }
 
 Footer.propTypes = {
-  // logo: PropTypes.string,
-  firstColumn: PropTypes.array,
+  footerNavigation: PropTypes.object,
   secondColumn: PropTypes.array,
   contacts: PropTypes.object,
-  terms: PropTypes.object
+  terms: PropTypes.object,
+  logo: PropTypes.object
 }
 
 export default Footer

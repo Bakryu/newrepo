@@ -26,6 +26,7 @@
   }
 }
 .descriptionWrapper {
+  z-index: 1;
   @media (min-width: $md) {
     width: 50%;
   }
@@ -58,6 +59,7 @@
 }
 
 .formWrapper {
+  z-index: 1;
   @media (min-width: $md) {
     width: 45%;
   }

@@ -4,9 +4,8 @@ import FormDecor from './components/FormDecor'
 
 import styles from './connectForm.module.scss'
 
-const ConnectForm = ({connectWithUsForm, buttons}) => {
-  const {formTitle, formDescription, agreements, privacyPolicy, and, termsOfUse, inputList} =
-    connectWithUsForm
+const ConnectForm = ({connectWithUsForm, buttons, privacyPolicy, termsOfUse}) => {
+  const {formTitle, formDescription, agreements, inputList} = connectWithUsForm
   return (
     <section className={styles.connectForm}>
       <div className={styles.contentWrapper}>
@@ -20,7 +19,6 @@ const ConnectForm = ({connectWithUsForm, buttons}) => {
             buttonText={buttons.buttonSendRequest}
             agreements={agreements}
             privacyPolicy={privacyPolicy}
-            and={and}
             termsOfUse={termsOfUse}
           />
         </div>
@@ -32,6 +30,8 @@ const ConnectForm = ({connectWithUsForm, buttons}) => {
 
 ConnectForm.propTypes = {
   connectWithUsForm: PropTypes.object,
+  privacyPolicy: PropTypes.object,
+  termsOfUse: PropTypes.object,
   buttons: PropTypes.object
 }
 export default ConnectForm

@@ -4,23 +4,24 @@ export default {
   type: 'object',
   fields: [
     {
-      name: 'secondColumn',
+      name: 'group',
       type: 'array',
-      title: 'Navigation List',
+      title: 'Navigation Item',
       validation: Rule => [
         Rule.max(10).warning('Are you sure you want more than 10 items?'),
         Rule.unique().error('You have duplicate menu items')
       ],
       of: [
         {
-          type: 'navigationItem'
+          type: 'navigationItem',
+         
         }
       ]
     }
   ],
   preview: {
     select: {
-      title: 'title'
+      title: 'name'
     }
   }
 }

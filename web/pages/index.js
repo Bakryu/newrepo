@@ -8,15 +8,14 @@ import PathWayHomePage from '../components/pageSections/PathWayHomePage'
 import ServicesHomePage from '../components/pageSections/ServicesHomePage'
 import PartnersHomePage from '../components/pageSections/PartnersHomePage'
 
-
 const HomePage = ({title, hero, partners, pathways, services, config}) => {
   return (
-    <MainContainer title={title} config={config}>
+    <>
       <HeroHomePage props={hero} />
       <PathWayHomePage props={pathways} />
       <ServicesHomePage props={services} />
       <PartnersHomePage props={partners} />
-    </MainContainer>
+    </>
   )
 }
 

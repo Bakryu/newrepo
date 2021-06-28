@@ -20,7 +20,8 @@ const hiddenDocTypes = (listItem) =>
     'growPage',
     'ownPage',
     'processPage',
-    'transitionPage'
+    'transitionPage',
+    'initialFeesPage'
   ].includes(listItem.getId())
 
 export default () =>
@@ -85,7 +86,11 @@ export default () =>
               S.listItem()
                 .title('Process')
                 .schemaType('processPage')
-                .child(S.documentTypeList('processPage').title('Process'))
+                .child(S.documentTypeList('processPage').title('Process')),
+              S.listItem()
+                .title('Initial Fees Page')
+                .schemaType('initialFeesPage')
+                .child(S.documentTypeList('initialFeesPage').title('Initial Fees Page'))
             ])
         ),
       S.listItem()

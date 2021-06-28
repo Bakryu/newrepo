@@ -47,7 +47,12 @@ export default {
               type: 'string',
               title: 'Socials Item link'
             }
-          ]
+          ],
+          preview: {
+            select: {
+              title: 'link'
+            }
+          }
         }
       ]
     },

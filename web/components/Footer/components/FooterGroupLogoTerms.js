@@ -1,23 +1,24 @@
 import Link from 'next/link'
-import SLUGS from '../../../constants/slugs'
+import getUrl from '../../../helpers/getUrl'
 import styles from '../footer.module.scss'
 
 const FooterGroupLogoTerms = ({logoData, terms}) => {
+  const {alt, linkAlternative, logoImage, slug} = logoData
   const {privacyPolicy, termsOfUse, koydolInc, allRightReserved} = terms
   return (
     <div className={styles.logoTermsWrapper}>
-      <Link href={SLUGS.HOME}>
+      <Link href={linkAlternative || slug}>
         <a className={styles.logoWrapper}>
           {' '}
-          <img src={logoData.logoImage} className={styles.logo} alt="logo" />
+          <img src={getUrl(logoImage)} className={styles.logo} alt={alt} />
         </a>
       </Link>
       <div className={styles.termsWrapper}>
         <div className={styles.termsPolicyWrapper}>
-          <Link href={SLUGS.PRIVACY_POLICY}>
+          <Link href={privacyPolicy.link || privacyPolicy.slug}>
             <a className={styles.privacyPolicy}>{privacyPolicy.name}</a>
           </Link>
-          <Link href={SLUGS.TERMS_OF_USE}>
+          <Link href={termsOfUse.link || termsOfUse.slug}>
             <a className={styles.termsOfUse}>{termsOfUse.name}</a>
           </Link>
         </div>

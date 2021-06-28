@@ -34,11 +34,16 @@ export default {
         Rule.custom((lang) => (bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'))
     },
     {
-      title: 'Brand logo',
-      description: 'Best choice is to use an SVG where the color are set with currentColor',
+      title: 'Brand Logo',
       name: 'logo',
-      type: 'image',
+      type: 'object',
       fields: [
+        {
+          title: 'Logo Image',
+          description: 'Best choice is to use an SVG where the color are set with currentColor',
+          name: 'logoImage',
+          type: 'image'
+        },
         {
           name: 'alt',
           type: 'string',
@@ -47,6 +52,13 @@ export default {
           options: {
             isHighlighted: true
           }
+        },
+        {
+          name: 'link',
+          title: 'Link',
+          description: 'Link to Home Page',
+          type: 'reference',
+          to: [{ type: 'route' }]
         }
       ]
     },

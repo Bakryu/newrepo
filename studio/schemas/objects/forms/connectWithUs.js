@@ -60,10 +60,5 @@ export default {
       type: 'string',
       title: 'Terms Of Use'
     }
-  ],
-  preview: {
-    select: {
-      title: 'connectWithUs'
-    }
-  }
+  ]
 }

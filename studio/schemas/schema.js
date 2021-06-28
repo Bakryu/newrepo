@@ -17,6 +17,7 @@ import grow from './documents/grow'
 import own from './documents/own'
 import process from './documents/process'
 import transition from './documents/transition'
+import initialFees from './documents/initialFees'
 
 // Object types
 import embedHTML from './objects/embedHTML'
@@ -63,6 +64,7 @@ export default createSchema({
     grow,
     transition,
     process,
+    initialFees,
 
     // page elements
     homeHero,
