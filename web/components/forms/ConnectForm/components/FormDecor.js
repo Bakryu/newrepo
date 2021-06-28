@@ -1,7 +1,7 @@
 import COLORS from '../../../../constants/colors'
 import DecorElement from '../../../DecorElement'
 
-import styles from './formDecor.module.scss'
+import styles from './decor.module.scss'
 const FormDecor = () => {
   return (
     <>
