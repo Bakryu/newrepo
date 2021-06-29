@@ -1,0 +1,34 @@
+@import '../../styles/variables/all.scss';
+
+.listWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.listItem {
+  margin-right: 24px;
+}
+.listItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  font-weight: 600;
+  font-size: $font-size-sm;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: $black-color;
+  opacity: 0.5;
+}
+
+.name {
+  color: $black-color;
+  text-decoration: none;
+}
+.groupWrapper {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Footer from '../Footer'
 import ConnectForm from '../forms/ConnectForm'
+import Header from '../Header'
 
 const MainContainer = (props) => {
   const {children, config, connectWithUsForm} = props
@@ -27,6 +28,7 @@ const MainContainer = (props) => {
         />
         {/* <title>{title}</title> */}
       </Head>
+      <Header navigationList={mainNavigation.group} logo={logo} />
       {children}
       <ConnectForm
         connectWithUsForm={connectWithUsForm}

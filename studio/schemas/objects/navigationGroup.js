@@ -15,6 +15,26 @@ export default {
         {
           type: 'navigationItem',
          
+        },{
+
+          name:'navigationGroup',
+          type:'object',
+          title:'Navigation Group',
+          fields:[
+            {
+            name:'groupBoxName',
+            title:'Group Name',
+            type:'string'
+        },{
+          name:'groupList',
+          type:'array',
+          title:'Group List',
+          of:[
+            {type: 'navigationItem',}
+          ]
+        }
+          ]
+
         }
       ]
     }
