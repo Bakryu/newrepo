@@ -1,21 +1,21 @@
-import classNames from 'classnames/bind'
+import COLORS from '../../../../constants/colors'
 import DecorElement from '../../../DecorElement'
 
-import styles from './formDecor.module.scss'
+import styles from './decor.module.scss'
 const FormDecor = () => {
   return (
     <>
       <div className={styles.leftGroup}>
-        <DecorElement color="milk" />
+        <DecorElement color={COLORS.MILK} />
       </div>
       <div className={styles.centralGroup}>
-        <DecorElement />
-        <DecorElement color="milk" />
+        <DecorElement color={COLORS.WHITE} />
+        <DecorElement color={COLORS.MILK} />
       </div>
       <div className={styles.rightGroup}>
-        <DecorElement color="black" />
-        <DecorElement color="milk" />
-        <DecorElement color="yellow" />
+        <DecorElement color={COLORS.BLACK} />
+        <DecorElement color={COLORS.MILK} />
+        <DecorElement color={COLORS.YELLOW} />
       </div>
     </>
   )

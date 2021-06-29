@@ -3,7 +3,7 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: $white-color;
+  
 
   @media (min-width: $md) {
     width: 40px;
@@ -11,12 +11,20 @@
   }
 }
 
+
+
+.white {
+  background-color: $white-color;
+}
+
 .milk {
   opacity: 0.5;
+  background-color: $white-color;
 }
 
 .spirit {
   opacity: 0.2;
+  background-color: $white-color;
 }
 
 .yellow {
@@ -39,6 +47,6 @@
   background-color: $green-color;
 }
 
-.braun {
-  background-color: $braun-color;
+.brown {
+  background-color: $brown-color;
 }

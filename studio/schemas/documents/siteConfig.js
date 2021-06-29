@@ -6,7 +6,7 @@ export default {
   title: 'Site configuration',
   // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
   __experimental_actions: ['update', 'publish'],
-  fieldsets: [{ name: 'footer', title: 'Footer' }],
+
   fields: [
     {
       name: 'title',
@@ -34,11 +34,16 @@ export default {
         Rule.custom((lang) => (bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'))
     },
     {
-      title: 'Brand logo',
-      description: 'Best choice is to use an SVG where the color are set with currentColor',
+      title: 'Brand Logo',
       name: 'logo',
-      type: 'image',
+      type: 'object',
       fields: [
+        {
+          title: 'Logo Image',
+          description: 'Best choice is to use an SVG where the color are set with currentColor',
+          name: 'logoImage',
+          type: 'image'
+        },
         {
           name: 'alt',
           type: 'string',
@@ -47,40 +52,49 @@ export default {
           options: {
             isHighlighted: true
           }
-        }
-      ]
-    },
-    {
-      title: 'Main navigation',
-      name: 'mainNavigation',
-      description: 'Select pages for the top menu',
-      validation: (Rule) => [
-        Rule.max(5).warning('Are you sure you want more than 5 items?'),
-        Rule.unique().error('You have duplicate menu items')
-      ],
-      type: 'array',
-      of: [
+        },
         {
+          name: 'link',
+          title: 'Link',
+          description: 'Link to Home Page',
           type: 'reference',
           to: [{ type: 'route' }]
         }
       ]
+    },
+    {
+      name: 'mainNavigation',
+      type: 'navigationGroup',
+      title: 'Main navigation',
+      description: 'Select pages for the top menu'
     },
     {
       title: 'Footer navigation items',
       name: 'footerNavigation',
-      type: 'array',
-      validation: (Rule) => [
-        Rule.max(10).warning('Are you sure you want more than 10 items?'),
-        Rule.unique().error('You have duplicate menu items')
-      ],
-      fieldset: 'footer',
-      of: [
+      type: 'object',
+
+      fields: [
         {
-          type: 'reference',
-          to: [{ type: 'route' }]
+          name: 'firstColumn',
+          type: 'navigationGroup',
+          title: 'First column'
+        },
+        {
+          name: 'secondColumn',
+          type: 'navigationGroup',
+          title: 'Second column'
         }
       ]
+    },
+    {
+      name: 'contacts',
+      type: 'contacts',
+      Title: 'Contacts'
+    },
+    {
+      name: 'terms',
+      type: 'terms',
+      title: 'Terms'
     },
     {
       name: 'buttons',

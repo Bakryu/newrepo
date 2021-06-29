@@ -3,10 +3,6 @@ import Slick from 'react-slick'
 import getHeroSliderSize from '../../../helpers/getHeroSliderSize'
 
 import Arrow from './components/Arrow'
-
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-
 import arrowLeft from '../images/arrow-left.svg'
 import arrowRight from '../images/arrow-right.svg'
 

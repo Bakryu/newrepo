@@ -1,22 +1,51 @@
 import React from 'react'
 import BaseApp from 'next/app'
 import client from '../client'
+import MainContainer from '../components/MainContainer'
 import '../styles/global.scss'
 
 const siteConfigQuery = `
   *[_id == "global-config"] {
     ...,
-    logo {asset->{extension, url}},
-    mainNavigation[] -> {
+    logo{
       ...,
-      "title": page->title
+      "linkAlternative":link->link,
+      "slug":link->page->pageSlug
+      
     },
-    footerNavigation[] -> {
+    terms{
       ...,
-      "title": page->title
+      privacyPolicy{
+        name,
+        "link":link->link,
+        "slug":link->page->pageSlug
+      },
+      termsOfUse{
+        name,
+        "link":link->link,
+        "slug":link->page->pageSlug
+      },
+
+    },
+    mainNavigation{group[]{
+      name,
+      "link":link->link,
+      "slug":link->page->pageSlug
+  }},
+    footerNavigation{
+      firstColumn{group[]{
+        name,
+        "link":link->link,
+        "slug":link->page->pageSlug
+    }},
+      secondColumn{group[]{
+        name,
+        "link":link->link,
+        "slug":link->page->pageSlug}}
     }
   }[0]
   `
+
 const siteFormQuery = `
   *[_type == "formList"][0]
   `
@@ -37,6 +66,7 @@ class App extends BaseApp {
       })
 
       pageProps.config = {...config, ...formQuery}
+      pageProps.formQuery = formQuery.connectWithUsForm
 
       return {pageProps}
     }
@@ -46,7 +76,11 @@ class App extends BaseApp {
 
   render() {
     const {Component, pageProps} = this.props
-    return <Component {...pageProps} />
+    return (
+      <MainContainer config={pageProps.config} connectWithUsForm={pageProps.formQuery}>
+        <Component {...pageProps} />
+      </MainContainer>
+    )
   }
 }
 

@@ -54,20 +54,11 @@ export default {
       type: 'string',
       title: 'Privacy Policy'
     },
-    {
-      name: 'and',
-      type: 'string',
-      title: 'and'
-    },
+
     {
       name: 'termsOfUse',
       type: 'string',
       title: 'Terms Of Use'
     }
-  ],
-  preview: {
-    select: {
-      title: 'connectWithUs'
-    }
-  }
+  ]
 }

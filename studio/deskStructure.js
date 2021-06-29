@@ -12,7 +12,16 @@ const hiddenDocTypes = (listItem) =>
     'homePage',
     'formList',
     'privacyPolicyPage',
-    'termsOfUsePage'
+    'termsOfUsePage',
+    'availableMarketsPage',
+    'blogPage',
+    'commercialFlooringPage',
+    'faqPage',
+    'growPage',
+    'ownPage',
+    'processPage',
+    'transitionPage',
+    'initialFeesPage'
   ].includes(listItem.getId())
 
 export default () =>
@@ -45,7 +54,43 @@ export default () =>
               S.listItem()
                 .title('Terms of Use')
                 .schemaType('termsOfUsePage')
-                .child(S.documentTypeList('termsOfUsePage').title('Terms of Use'))
+                .child(S.documentTypeList('termsOfUsePage').title('Terms of Use')),
+              S.listItem()
+                .title('Available markets')
+                .schemaType('availableMarketsPage')
+                .child(S.documentTypeList('availableMarketsPage').title('Available markets')),
+              S.listItem()
+                .title('Blog')
+                .schemaType('blogPage')
+                .child(S.documentTypeList('blogPage').title('Blog')),
+              S.listItem()
+                .title('Commercial Flooring')
+                .schemaType('commercialFlooringPage')
+                .child(S.documentTypeList('commercialFlooringPage').title('Commercial Flooring')),
+              S.listItem()
+                .title('FAQ')
+                .schemaType('faqPage')
+                .child(S.documentTypeList('faqPage').title('FAQ')),
+              S.listItem()
+                .title('Own')
+                .schemaType('ownPage')
+                .child(S.documentTypeList('ownPage').title('Own')),
+              S.listItem()
+                .title('Grow')
+                .schemaType('growPage')
+                .child(S.documentTypeList('growPage').title('Grow')),
+              S.listItem()
+                .title('Transition')
+                .schemaType('transitionPage')
+                .child(S.documentTypeList('transitionPage').title('Transition')),
+              S.listItem()
+                .title('Process')
+                .schemaType('processPage')
+                .child(S.documentTypeList('processPage').title('Process')),
+              S.listItem()
+                .title('Initial Fees Page')
+                .schemaType('initialFeesPage')
+                .child(S.documentTypeList('initialFeesPage').title('Initial Fees Page'))
             ])
         ),
       S.listItem()

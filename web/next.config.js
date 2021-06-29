@@ -7,6 +7,7 @@ const query = `
 {
   "routes": *[_type == "route"] {
     ...,
+    "slug":page->pageSlug,
     disallowRobot,
     includeInSitemap,
     pagesList->{
@@ -45,10 +46,15 @@ module.exports = withCSS(
     exportPathMap: function () {
       return client.fetch(query).then((res) => {
         const {routes = []} = res
+        console.log(res)
         const nextRoutes = {
           // Routes imported from sanity
-          ...routes.filter(({slug}) => slug.current).reduce(reduceRoutes, {}),
-          '/custom-page': {page: '/CustomPage'}
+          ...routes
+            .filter(({slug}) => {
+              return slug.current
+            })
+            .reduce(reduceRoutes, {}),
+          '/': {page: '/'}
         }
         return nextRoutes
       })

@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind'
+import getUrl from '../../../helpers/getUrl'
 import styles from '../footer.module.scss'
 
 const FooterGroupContacts = ({contacts}) => {
@@ -19,8 +20,8 @@ const FooterGroupContacts = ({contacts}) => {
       <div className={styles.socialsWrapper}>
         {socials.map((item, idx) => {
           return (
-            <a href={item.link} className={styles.socialsItem} key={idx}>
-              <img src={item.image} className={styles.socialImage} />
+            <a href={item.link} className={styles.socialsItem} key={idx} alt="social network">
+              <img src={getUrl(item.image)} className={styles.socialImage} target="_blank" />
             </a>
           )
         })}

@@ -3,8 +3,6 @@ import Slick from 'react-slick'
 import useResize from 'use-resizing'
 import classNames from 'classnames/bind'
 
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 import styles from './mobileSlider.scss'
 
 const MobileSlider = ({items, settings, instance,buttonsStyle}) => {

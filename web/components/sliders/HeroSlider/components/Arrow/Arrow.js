@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 
-import styles from './Arrow.module.scss'
+import styles from './arrow.module.scss'
 
 const Arrow = ({onClick, children, direction, arrowImage}) => {
   const directionStyles = direction && direction === 'next' ? styles.next : styles.previous

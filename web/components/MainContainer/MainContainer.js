@@ -1,12 +1,10 @@
 import Head from 'next/head'
-import client from '../../client'
 import Footer from '../Footer'
 import ConnectForm from '../forms/ConnectForm'
-import data from '../Footer/plug/data' // remove this
 
 const MainContainer = (props) => {
-  const {children, title, config} = props
-  const {mainNavigation, footerNavigation, footerText, logo, url, connectWithUsForm,buttons} = config
+  const {children, config, connectWithUsForm} = props
+  const {mainNavigation, footerNavigation, contacts, terms, logo, buttons} = config
 
   return (
     <>
@@ -27,11 +25,16 @@ const MainContainer = (props) => {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        <title>{title}</title>
+        {/* <title>{title}</title> */}
       </Head>
       {children}
-      <ConnectForm connectWithUsForm={connectWithUsForm} buttons={buttons }/>
-      <Footer data={data} />
+      <ConnectForm
+        connectWithUsForm={connectWithUsForm}
+        buttons={buttons}
+        privacyPolicy={terms.privacyPolicy}
+        termsOfUse={terms.termsOfUse}
+      />
+      <Footer footerNavigation={footerNavigation} contacts={contacts} terms={terms} logo={logo} />
     </>
   )
 }
