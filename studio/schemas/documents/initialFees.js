@@ -5,7 +5,7 @@ export default {
   type: 'document',
   title: 'Initial Fees',
   initialValue: {
-    pageSlug: SLUGS.INITIAL_FISTS
+    pageSlug: SLUGS.INITIAL_FEES
   },
   fields: [
     {

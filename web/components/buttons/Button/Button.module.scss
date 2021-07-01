@@ -1,8 +1,11 @@
 @import '../../../styles/variables/all.scss';
 .buttonStyles {
+  display: block;
   width: 100%;
+  max-width: 288px;
   height: 40px;
   padding: 10px 16px 10px;
+  margin: 0 auto;
   font-weight: 600;
   font-size: $font-size-sm;
   line-height: 150%;
@@ -12,6 +15,7 @@
   transition: 0.2s;
   cursor: pointer;
   @media (min-width: $md) {
+    margin: 0;
     width: auto;
   }
 }

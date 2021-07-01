@@ -14,8 +14,8 @@ const FooterGroupContacts = ({contacts}) => {
         {' '}
         {phoneNumber.placeholder}
       </a>
-      <a href={`mailto:${email}`} className={classNames(styles.email, styles.linkText)}>
-        {email}
+      <a href={`mailto:${email.email}`} className={classNames(styles.email, styles.linkText)}>
+        {email.email}
       </a>
       <div className={styles.socialsWrapper}>
         {socials.map((item, idx) => {

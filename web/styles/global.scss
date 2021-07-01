@@ -23,3 +23,9 @@ footer {
     padding-right: calc(50% - 720px) !important;
   }
 }
+
+header{
+  position: relative;
+  z-index: 2;
+  background: $white-color;
+}

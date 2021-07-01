@@ -1,11 +1,9 @@
 module.exports = {
   extends: [
-    'plugin:react/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/errors',
-    'plugin:import/warnings',
-    'prettier'
+    'plugin:import/warnings'
   ],
   rules: {
     'object-curly-spacing': ['error', 'never'],

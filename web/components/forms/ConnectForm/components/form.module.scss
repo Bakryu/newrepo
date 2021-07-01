@@ -28,6 +28,9 @@
       width: 100%;
     }
 
+    
+  }
+  @media (min-width: 900px) {
     :nth-child(3) {
       width: 48%;
       min-width: 136px;
@@ -36,6 +39,7 @@
       width: 48%;
       min-width: 136px;
     }
+
   }
 }
 .agreements {

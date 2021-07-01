@@ -1,34 +1,35 @@
 import Link from 'next/link'
-// import MobileNavigation from './components/MobileNavigation'
+import useResize from 'use-resizing'
+import MobileNavigation from './components/MobileNavigation'
 import BigScreenNavigation from './components/BigScreenNavigation'
+import NavigationAccordion from './components/NavigationAccordion'
+import BlackNavigation from './components/BlackNavigation'
 
 import styles from './header.module.scss'
 
-const Header = ({navigationList, logo}) => {
+const Header = ({navigationList, logo, contacts, blackNavigation}) => {
+  const activeNavigation = () => {
+    const screen = useResize()
+
+    if (screen.width < 769) {
+      return (
+        <MobileNavigation logo={logo} navigationItems={navigationItems}>
+          <BlackNavigation contacts={contacts} blackNavigation={blackNavigation} />
+        </MobileNavigation>
+      )
+    }
+    return (
+      <BigScreenNavigation logo={logo} navigationItems={navigationItems}>
+        <BlackNavigation contacts={contacts} blackNavigation={blackNavigation} />
+      </BigScreenNavigation>
+    )
+  }
   const createNavigationList = (list) => {
     return (
       <ul className={styles.listWrapper}>
         {list.map((item, idx) => {
           if (item.hasOwnProperty('groupList')) {
-            return (
-              <li className={styles.listItem} key={idx}>
-                {item.groupBoxName}
-                <div className={styles.groupWrapper}>
-                  {item.groupList.map((groupItem, idx) => {
-                    return (
-                      <Link href={groupItem.link || groupItem.slug}>
-                        <a className={styles.groupItem} key={idx}>
-                          {groupItem.name}
-                        </a>
-                      </Link>
-                    )
-                  })}
-                </div>
-                <Link href={item.link || item.slug}>
-                  <a> {item.name}</a>
-                </Link>
-              </li>
-            )
+            return <NavigationAccordion item={item} key={idx} />
           }
 
           return (
@@ -44,12 +45,7 @@ const Header = ({navigationList, logo}) => {
   }
 
   const navigationItems = createNavigationList(navigationList)
-  return (
-    <header>
-      <BigScreenNavigation logo={logo}>{navigationItems}</BigScreenNavigation>
-      {/* <MobileNavigation logo={logo}>{navigationItems}</MobileNavigation> */}
-    </header>
-  )
+  return <header>{activeNavigation()}</header>
 }
 
 export default Header
