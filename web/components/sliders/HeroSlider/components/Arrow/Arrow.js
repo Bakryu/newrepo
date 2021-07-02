@@ -11,7 +11,7 @@ const Arrow = ({onClick, children, direction, arrowImage}) => {
   return (
     <button className={classNames(styles.container, directionStyles)} onClick={onClick}>
       {children}
-      <Image className={styles.arrowImage} src={arrowImage} />
+      <Image className={styles.arrowImage} src={arrowImage} alt="arrow" />
     </button>
   )
 }

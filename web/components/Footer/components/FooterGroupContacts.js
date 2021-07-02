@@ -26,6 +26,7 @@ const FooterGroupContacts = ({contacts}) => {
               key={idx}
               alt="social network"
               target="_blank"
+              rel="noreferrer"
             >
               <img src={getUrl(item.image)} className={styles.socialImage} />
             </a>

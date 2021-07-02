@@ -9,7 +9,7 @@ import BlackNavigation from './components/BlackNavigation'
 import styles from './header.module.scss'
 
 const Header = ({navigationList, logo, contacts, blackNavigation}) => {
-  const activeNavigation = () => {
+  const useActiveNavigation = () => {
     const screen = useResize()
 
     if (screen.width < screenWidth.bigScreen) {
@@ -46,7 +46,7 @@ const Header = ({navigationList, logo, contacts, blackNavigation}) => {
   }
 
   const navigationItems = createNavigationList(navigationList)
-  return <header>{activeNavigation()}</header>
+  return <header>{useActiveNavigation()}</header>
 }
 
 export default Header
