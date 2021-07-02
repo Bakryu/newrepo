@@ -1,3 +1,4 @@
+const path = require('path')
 const client = require('./client')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -52,5 +53,8 @@ module.exports = {
   },
   images: {
     domains: ['https://distracted-bartik-e44316.netlify.app']
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')]
   }
 }
