@@ -52,6 +52,7 @@ module.exports = {
     })
   },
   images: {
+    loader: 'imgix',
     domains: ['https://distracted-bartik-e44316.netlify.app']
   },
   sassOptions: {
