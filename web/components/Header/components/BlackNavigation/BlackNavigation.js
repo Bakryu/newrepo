@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import styles from './blackNavigation.module.scss'
@@ -11,7 +12,7 @@ const BlackNavigation = ({blackNavigation, contacts}) => {
     <div className={styles.blackNavigation}>
       <Link href={backLink}>
         <a className={styles.link}>
-          <img src={arrow} className={styles.arrow} alt="decor arrow" />
+          <Image src={arrow} className={styles.arrow} alt="decor arrow" />
           {backName}
         </a>
       </Link>

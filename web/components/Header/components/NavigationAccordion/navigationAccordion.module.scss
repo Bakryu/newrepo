@@ -5,7 +5,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 22px 0;
     font-weight: bold;
     font-size: $font-size-sm;
@@ -67,8 +67,7 @@
     top: calc(100% + 18px);
     left: -8px;
     background-color:$white-color;
-    z-index: 1000;
-    transform: translateY(-150px);
+    transform: translateY(-210px);
     z-index: -1;
     cursor: auto;}
     

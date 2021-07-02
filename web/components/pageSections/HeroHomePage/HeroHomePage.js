@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import Image from '@/components/Image'
 import {useSlider} from '../../../hooks'
 import getUrl from '../../../helpers/getUrl'
 import Button from '../../buttons/Button'
@@ -35,16 +36,20 @@ const HeroHomePage = ({props}) => {
         <h2 className={styles.description}>{subTitle}</h2>
         <Button color={'yellow'} text={'send request'} onClick={() => {}} />
         <h3 className={styles.proposition}>
-          <img
-            src={propositionDecor}
-            className={styles.propositionDecor}
-            alt="decorative element"
-          />
-          <img
-            src={propositionDecorBlack}
-            className={styles.propositionDecorBlack}
-            alt="decorative element"
-          />
+          <div className={styles.propositionDecor}>
+            <Image
+              src={propositionDecor}
+              className={styles.propositionDecor}
+              alt="decorative element"
+            />
+          </div>
+          <div className={styles.propositionDecorBlack}>
+            <Image
+              src={propositionDecorBlack}
+              className={styles.propositionDecorBlack}
+              alt="decorative element"
+            />
+          </div>
           {proposition}
         </h3>
         <Video homePageVideo={heroVideo.homePageVideo} videoPoster={videoPoster} />

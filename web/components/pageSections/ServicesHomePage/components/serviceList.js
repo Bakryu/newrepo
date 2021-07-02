@@ -1,4 +1,5 @@
 import getUrl from '../../../../helpers/getUrl'
+import Image from '@/components/Image'
 import classNames from 'classnames/bind'
 import styles from '../service.module.scss'
 import background1 from '../images/background-1.png'
@@ -19,11 +20,9 @@ const serviceList = (servicesItemList) => {
       >
         <div className={styles.imageWrapper}>
           <img className={styles.itemImage} src={getUrl(item.image)} alt="service item image" />
-          <img
-            className={styles.itemBg}
-            src={backgroundArray[countImageDecor]}
-            alt="service item background"
-          />
+          <div className={styles.itemBg}>
+            <Image src={backgroundArray[countImageDecor]} alt="service item background" />
+          </div>
         </div>
         <div className={styles.descriptionWrapper}>
           <h3 className={styles.itemTitle}>{item.title}</h3>

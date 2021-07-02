@@ -1,5 +1,4 @@
-const withCSS = require('@zeit/next-css')
-const withSass = require('@zeit/next-sass')
+const path = require('path')
 const client = require('./client')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -36,40 +35,27 @@ const reduceRoutes = (obj, route) => {
   return obj
 }
 
-module.exports = withCSS(
-  withSass({
-    cssModules: true,
-    cssLoaderOptions: {
-      importLoaders: 1,
-      localIdentName: isProduction ? '[hash:base64:5]' : '[name]__[local]___[hash:base64:5]'
-    },
-    exportPathMap: function () {
-      return client.fetch(query).then((res) => {
-        const {routes = []} = res
-        const nextRoutes = {
-          // Routes imported from sanity
-          ...routes
-            .filter(({slug}) => {
-              return slug.current
-            })
-            .reduce(reduceRoutes, {}),
-          '/': {page: '/'}
-        }
-        return nextRoutes
-      })
-    },
-    webpack(config, options) {
-      config.module.rules.push({
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 100000
-          }
-        }
-      })
-
-      return config
-    }
-  })
-)
+module.exports = {
+  exportPathMap: function () {
+    return client.fetch(query).then((res) => {
+      const {routes = []} = res
+      const nextRoutes = {
+        // Routes imported from sanity
+        ...routes
+          .filter(({slug}) => {
+            return slug.current
+          })
+          .reduce(reduceRoutes, {}),
+        '/': {page: '/'}
+      }
+      return nextRoutes
+    })
+  },
+  images: {
+    loader: 'imgix',
+    domains: ['https://distracted-bartik-e44316.netlify.app']
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')]
+  }
+}

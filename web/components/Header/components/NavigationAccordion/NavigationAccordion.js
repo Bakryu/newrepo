@@ -19,7 +19,6 @@ const NavigationAccordion = ({item}) => {
       {groupBoxName}
       <svg
         className={classNames(styles.arrow, isOpen && styles.arrowOpen)}
-        ß
         width="21"
         height="21"
         viewBox="0 0 21 21"
@@ -28,8 +27,8 @@ const NavigationAccordion = ({item}) => {
         alt="decor arrow"
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M6 9.99294L7.11509 9L10.5 12.0141L13.8849 9L15 9.99294L10.5 14L6 9.99294Z"
           fill="#323232"
         />

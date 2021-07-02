@@ -29,6 +29,7 @@ import navigationGroup from './objects/navigationGroup'
 import pathwaysItem from './objects/homePage/object/pathwaysItem'
 import servicesItem from './objects/homePage/object/servicesItem'
 import blackNavigation from './objects/blackNavigation'
+import video from './objects/video'
 //  page sections
 import homeHero from './objects/homePage/sections/homeHero'
 import homePartners from './objects/homePage/sections/homePartners'
@@ -82,6 +83,7 @@ export default createSchema({
     contacts,
     navigationItem,
     navigationGroup,
-    blackNavigation
+    blackNavigation,
+    video
   ])
 })
