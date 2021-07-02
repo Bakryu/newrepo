@@ -1,20 +1,29 @@
-import getUrl from '../../../../helpers/getUrl'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
+import getUrl from '../../../../helpers/getUrl'
 
 import styles from './bigScreenNavigation.module.scss'
 
-const BigScreenNavigation = ({logo, children}) => {
-  const {link, slug, logoImage, alt} = logo
+const BigScreenNavigation = ({logo, navigationItems, children}) => {
+  const {link, slug, logoImageMain, alt} = logo
   return (
-    <div className={styles.bigScreen}>
-      <Link href={link || slug}>
-        <div className={styles.logoWrapper}>
-          <img src={getUrl(logoImage)} className={styles.logo} alt={alt} />
-        </div>
-      </Link>
+    <>
       {children}
-    </div>
+      <div className={styles.bigScreen}>
+        <Link href={link || slug}>
+          <a className={styles.logoWrapper}>
+            <img src={getUrl(logoImageMain)} className={styles.logo} alt={alt} />
+          </a>
+        </Link>
+        {navigationItems}
+      </div>
+    </>
   )
+}
+
+BigScreenNavigation.propTypes = {
+  navigationItems: PropTypes.object,
+  logo: PropTypes.object
 }
 
 export default BigScreenNavigation

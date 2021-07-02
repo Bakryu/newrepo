@@ -13,6 +13,7 @@ const siteConfigQuery = `
       "slug":link->page->pageSlug
       
     },
+    blackNavigation,
     terms{
       ...,
       privacyPolicy{

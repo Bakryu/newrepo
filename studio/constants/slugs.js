@@ -3,7 +3,7 @@ const SLUGS = {
   PRIVACY_POLICY: 'privacy-policy',
   TERMS_OF_USE: 'terms-of-use',
   OUR_STORY: 'our-story',
-  INITIAL_FISTS: 'initial-fees',
+  INITIAL_FEES: 'initial-fees',
   BUY_FRANCHISE: 'buy-a-franchise',
   HOW_WE_DO_HELP: 'How-do-we-help',
   AVAILABLE_MARKETS: 'available-markets',

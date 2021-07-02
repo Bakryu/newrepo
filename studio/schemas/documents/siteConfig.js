@@ -45,6 +45,12 @@ export default {
           type: 'image'
         },
         {
+          title: 'Logo Image Main',
+          description: 'Best choice is to use an SVG where the color are set with currentColor',
+          name: 'logoImageMain',
+          type: 'image'
+        },
+        {
           name: 'alt',
           type: 'string',
           title: 'Alternative text',
@@ -67,6 +73,10 @@ export default {
       type: 'navigationGroup',
       title: 'Main navigation',
       description: 'Select pages for the top menu'
+    },
+    {
+      name: 'blackNavigation',
+      type: 'blackNavigation'
     },
     {
       title: 'Footer navigation items',

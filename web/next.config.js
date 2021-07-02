@@ -46,7 +46,6 @@ module.exports = withCSS(
     exportPathMap: function () {
       return client.fetch(query).then((res) => {
         const {routes = []} = res
-        console.log(res)
         const nextRoutes = {
           // Routes imported from sanity
           ...routes

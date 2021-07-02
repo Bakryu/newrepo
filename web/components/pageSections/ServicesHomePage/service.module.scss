@@ -187,6 +187,10 @@
   }
   .descriptionWrapper {
     padding-top: 28px;
+    @media (min-width: $md) {
+      padding-top: 60px;
+
+    }
   }
 }
 

@@ -5,7 +5,7 @@ import Header from '../Header'
 
 const MainContainer = (props) => {
   const {children, config, connectWithUsForm} = props
-  const {mainNavigation, footerNavigation, contacts, terms, logo, buttons} = config
+  const {mainNavigation, footerNavigation, contacts, terms, logo, buttons, blackNavigation} = config
 
   return (
     <>
@@ -28,7 +28,12 @@ const MainContainer = (props) => {
         />
         {/* <title>{title}</title> */}
       </Head>
-      <Header navigationList={mainNavigation.group} logo={logo} />
+      <Header
+        navigationList={mainNavigation.group}
+        logo={logo}
+        blackNavigation={blackNavigation}
+        contacts={contacts}
+      />
       {children}
       <ConnectForm
         connectWithUsForm={connectWithUsForm}
