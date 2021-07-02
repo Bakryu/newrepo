@@ -3,15 +3,15 @@ import Slick from 'react-slick'
 import useResize from 'use-resizing'
 import classNames from 'classnames/bind'
 
-import styles from './mobileSlider.scss'
+import styles from './mobileSlider.module.scss'
 
-const MobileSlider = ({items, settings, instance,buttonsStyle}) => {
+const MobileSlider = ({items, settings, instance, buttonsStyle}) => {
   const widthSliderItem = 216
   const screenSize = useResize()
   const defaultSettings = {
     customPaging: function customDot(i) {
       return (
-        <button className={classNames(styles.buttons,styles[buttonsStyle])}>
+        <button className={classNames(styles.buttons, styles[buttonsStyle])}>
           <div>
             <span>{i}</span>
           </div>

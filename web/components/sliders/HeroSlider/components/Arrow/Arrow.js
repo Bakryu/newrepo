@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from '@/components/Image'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 
@@ -8,9 +9,9 @@ const Arrow = ({onClick, children, direction, arrowImage}) => {
   const directionStyles = direction && direction === 'next' ? styles.next : styles.previous
 
   return (
-    <button className={classNames(styles.container ,directionStyles)} onClick={onClick}>
+    <button className={classNames(styles.container, directionStyles)} onClick={onClick}>
       {children}
-      <img className={styles.arrowImage} src={arrowImage} />
+      <Image className={styles.arrowImage} src={arrowImage} />
     </button>
   )
 }

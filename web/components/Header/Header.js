@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import useResize from 'use-resizing'
+import screenWidth from '@/constants/screenWidth'
 import MobileNavigation from './components/MobileNavigation'
 import BigScreenNavigation from './components/BigScreenNavigation'
 import NavigationAccordion from './components/NavigationAccordion'
@@ -11,7 +12,7 @@ const Header = ({navigationList, logo, contacts, blackNavigation}) => {
   const activeNavigation = () => {
     const screen = useResize()
 
-    if (screen.width < 769) {
+    if (screen.width < screenWidth.bigScreen) {
       return (
         <MobileNavigation logo={logo} navigationItems={navigationItems}>
           <BlackNavigation contacts={contacts} blackNavigation={blackNavigation} />

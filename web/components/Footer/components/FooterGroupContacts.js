@@ -20,8 +20,14 @@ const FooterGroupContacts = ({contacts}) => {
       <div className={styles.socialsWrapper}>
         {socials.map((item, idx) => {
           return (
-            <a href={item.link} className={styles.socialsItem} key={idx} alt="social network">
-              <img src={getUrl(item.image)} className={styles.socialImage} target="_blank" />
+            <a
+              href={item.link}
+              className={styles.socialsItem}
+              key={idx}
+              alt="social network"
+              target="_blank"
+            >
+              <img src={getUrl(item.image)} className={styles.socialImage} />
             </a>
           )
         })}

@@ -40,6 +40,11 @@ export default {
       name: 'weCanHelp',
       type: 'string',
       title: 'We can help'
-    }
+    },
+    {
+      name: 'video',
+      type: 'video'
+    },
+    {}
   ]
 }
