@@ -1,7 +1,7 @@
-module.exports = ({file, options, env}) => ({
+module.exports = {
   plugins: {
     'postcss-import': {},
-    cssnano: env === 'production' ? {} : false,
+    cssnano: process.env === 'production' ? {} : false,
     'postcss-preset-env': {
       stage: 0,
       features: {
@@ -10,4 +10,4 @@ module.exports = ({file, options, env}) => ({
       }
     }
   }
-})
+}
