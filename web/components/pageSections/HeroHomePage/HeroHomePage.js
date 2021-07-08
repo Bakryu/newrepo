@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Image from '@/components/Image'
+import Image from 'next/image'
 import {useSlider} from '../../../hooks'
 import getUrl from '../../../helpers/getUrl'
 import Button from '../../buttons/Button'
@@ -11,7 +11,7 @@ import propositionDecor from './images/proposition-decor.png'
 import propositionDecorBlack from './images/proposition-decor-black.png'
 
 const HeroHomePage = ({props}) => {
-  const {title, subTitle, proposition, propositionList, heroBg, heroVideo, videoPoster} = props
+  const {title, subTitle, proposition, propositionList, heroBg, video} = props
 
   const sliderItems = propositionList.map((item, idx) => {
     return (
@@ -52,7 +52,9 @@ const HeroHomePage = ({props}) => {
           </div>
           {proposition}
         </h3>
-        <Video homePageVideo={heroVideo.homePageVideo} videoPoster={videoPoster} />
+        <div className={styles.videoWrapper}>
+          <Video video={video} />
+        </div>
       </section>
       <section className={styles.heroSectionProposition}>{viewSlider}</section>
     </>

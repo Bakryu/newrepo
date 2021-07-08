@@ -5,6 +5,7 @@ const COLORS = {
   YELLOW: 'yellow',
   BLACK: 'black',
   GREY: 'grey',
+  RED: 'red',
   GREEN: 'green',
   BROWN: 'brown'
 }

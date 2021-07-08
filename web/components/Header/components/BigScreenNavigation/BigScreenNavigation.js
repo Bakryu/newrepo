@@ -5,12 +5,12 @@ import getUrl from '../../../../helpers/getUrl'
 import styles from './bigScreenNavigation.module.scss'
 
 const BigScreenNavigation = ({logo, navigationItems, children}) => {
-  const {link, slug, logoImageMain, alt} = logo
+  const {slug, logoImageMain, alt} = logo
   return (
     <>
       {children}
       <div className={styles.bigScreen}>
-        <Link href={link || slug}>
+        <Link href={slug}>
           <a className={styles.logoWrapper}>
             <img src={getUrl(logoImageMain)} className={styles.logo} alt={alt} />
           </a>

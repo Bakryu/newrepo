@@ -28,6 +28,13 @@ const siteConfigQuery = `
       },
 
     },
+    
+    ownGrowTransitionNavigation[]{
+      name,
+      "link":link->link,
+      "slug":link->page->pageSlug
+    },
+    
     mainNavigation{group[]{
       name,
       groupBoxName,

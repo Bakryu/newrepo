@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from '@/components/Image'
+import Image from 'next/image'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 

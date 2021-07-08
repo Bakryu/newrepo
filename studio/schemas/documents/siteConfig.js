@@ -97,6 +97,30 @@ export default {
       ]
     },
     {
+      name: 'ownGrowTransitionNavigation',
+      type: 'array',
+      title: 'Own Grow Transition Navigation',
+      of: [
+        {
+          name: 'navigationItem',
+          type: 'object',
+          title: 'Navigation Item',
+          fields: [
+            {
+              name: 'name',
+              type: 'string',
+              title: 'Rout Name'
+            },
+            {
+              name: 'link',
+              type: 'reference',
+              to: [{ type: 'route' }]
+            }
+          ]
+        }
+      ]
+    },
+    {
       name: 'contacts',
       type: 'contacts',
       Title: 'Contacts'
@@ -115,6 +139,11 @@ export default {
           name: 'buttonSendRequest',
           type: 'string',
           title: 'Send request'
+        },
+        {
+          name: 'buttonLearnMore',
+          type: 'string',
+          title: 'Learn More'
         }
       ]
     }

@@ -25,9 +25,12 @@ HomePage.getInitialProps = async (ctx) => {
       groq`*[_type == "homePage" ][0]{
             title,partners, pathways,services,
             hero{title, subTitle, proposition,
-            propositionList,heroBg,videoPoster,
-            heroVideo{"homePageVideo": asset->url}}
-          }`
+            propositionList,heroBg,
+            video{videoPoster,
+            "videoUrl": videoUrl.asset->url
+          }
+        }  
+      }`
     )
     .then((res) => ({...res}))
 }

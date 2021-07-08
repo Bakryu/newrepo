@@ -9,7 +9,7 @@ export default {
       title: 'Video Poster'
     },
     {
-      name: 'video',
+      name: 'videoUrl',
       type: 'file',
       title: 'Video',
       description: 'upload video format "mp4" to this field'

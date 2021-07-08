@@ -1,9 +1,10 @@
 import Link from 'next/link'
+import classNames from 'classnames/bind'
 import styles from './linkTo.module.scss'
-const LinkTo = ({link, linkName}) => {
+const LinkTo = ({link, linkName, style}) => {
   return (
     <Link href={link}>
-      <a className={styles.linkName}>
+      <a className={classNames(styles.linkName, styles[style])}>
         {linkName}
         <div className={styles.arrowsWrapper}>
           <svg

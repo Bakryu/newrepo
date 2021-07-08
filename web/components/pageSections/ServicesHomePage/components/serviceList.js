@@ -1,5 +1,5 @@
 import getUrl from '../../../../helpers/getUrl'
-import Image from '@/components/Image'
+import Image from 'next/image'
 import classNames from 'classnames/bind'
 import styles from '../service.module.scss'
 import background1 from '../images/background-1.png'

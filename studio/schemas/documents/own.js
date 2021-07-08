@@ -9,21 +9,20 @@ export default {
   },
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Title'
-    },
-    {
       name: 'pageSlug',
       type: 'string',
       title: 'Slug',
       readOnly: true
+    },
+    {
+      name: 'ownContent',
+      type: 'ownGrowTransitionPage'
     }
   ],
 
   preview: {
     select: {
-      title: 'title'
+      title: 'ownContent.hero.title'
     }
   }
 }

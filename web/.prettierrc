@@ -4,5 +4,9 @@
   "semi": false,
   "trailingComma": "none",
   "insertSpaceBeforeFunctionParenthesis": true,
-  "bracketSpacing": false
+  "bracketSpacing": false,
+  "cssEnable": [
+    
+    "sass"
+]
 }
