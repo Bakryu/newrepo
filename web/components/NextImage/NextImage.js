@@ -4,9 +4,12 @@ import styles from './nextImage.module.scss'
 
 const NextImage = ({link, alt}) => {
   const url = getUrl(link).url()
+  const myLoader = ({layout, src}) => {
+    return `${src}?l=${layout}`
+  }
   return (
     <div className={styles.image}>
-      <Image src={url} layout="fill" alt={alt} />
+      <Image loader={myLoader} alt={alt} layout="fill" src={url} />
     </div>
   )
 }
