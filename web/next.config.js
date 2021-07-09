@@ -53,7 +53,7 @@ module.exports = {
   },
   images: {
     loader: 'imgix',
-    domains: ['https://distracted-bartik-e44316.netlify.app']
+    domains: ['cdn.sanity.io']
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]

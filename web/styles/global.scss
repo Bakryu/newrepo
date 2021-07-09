@@ -1,4 +1,4 @@
-@import './variables/all.scss';
+@import "./variables/all.scss";
 html,
 * {
   font-family: $font-inter;
@@ -24,8 +24,12 @@ footer {
   }
 }
 
-header{
+header {
   position: relative;
-  z-index: 2;
+  height: 56px;
+  z-index: 100;
   background: $white-color;
+  @media (min-width: $md) {
+    height: 79px;
+  }
 }

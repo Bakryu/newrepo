@@ -1,4 +1,4 @@
-@import '../../styles/variables/all.scss';
+@import "../../styles/variables/all.scss";
 
 .linkName {
   display: inline-block;
@@ -35,4 +35,11 @@
   width: 12px;
   height: 12px;
   transition: 0.3s;
+}
+
+.white {
+  color: $white-color;
+  path {
+    fill: $white-color;
+  }
 }

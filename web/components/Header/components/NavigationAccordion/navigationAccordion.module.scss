@@ -1,27 +1,25 @@
-
-@import '../../../../styles/variables/all.scss';
+@import "../../../../styles/variables/all.scss";
 
 .listItem {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 22px 0;
-    font-weight: bold;
-    font-size: $font-size-sm;
-    color: $light-gray-color;
-    line-height: 108%;
-    list-style-type: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-top: 1px solid rgba($light-gray-color,.5);
-    transition: all 0.3s ease-out;
-    
-    &:hover{
-      opacity: 1;
-    }
-    
-    @media (min-width: $md) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 22px 0;
+  font-weight: bold;
+  font-size: $font-size-sm;
+  color: $light-gray-color;
+  line-height: 108%;
+  list-style-type: none;
+  text-transform: uppercase;
+  border-top: 1px solid rgba($light-gray-color, 0.5);
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media (min-width: $md) {
     padding: 0;
     margin-left: 6px;
     align-items: center;
@@ -34,25 +32,28 @@
     z-index: auto;
 
     border-top: none;
-    }
+  }
 
   @media (min-width: $lg) {
     margin-left: 10px;
-    
   }
   @media (min-width: $xl) {
     margin-left: 14px;
-    
   }
   @media (min-width: 1280px) {
     margin-left: 24px;
-
   }
 }
+.listContent {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
 
-.listItemOpen{
-    opacity: 1 !important;
-    transition: all 0.3s ease-out;
+.listItemOpen {
+  opacity: 1 !important;
+  transition: all 0.3s ease-out;
 }
 
 .groupWrapper {
@@ -66,47 +67,46 @@
     width: calc(100% + 8px);
     top: calc(100% + 18px);
     left: -8px;
-    background-color:$white-color;
+    background-color: $white-color;
     transform: translateY(-210px);
     z-index: -1;
-    cursor: auto;}
-    
-    @media (min-width: $xl) {
-        padding: 16px;
-        left: -16px;
-        width: calc(100% + 32px);
-
-    }
-}
-.groupWrapperOpen{
-    transform: translateY(0);  
-    .groupItem{
-      color: $grey-color;
-      height: 24px;
-
-      @media (max-width: $md) {
-        margin-top: 24px;
-        color: $light-gray-color;
-      }
-    }
-
+    cursor: auto;
   }
-  
-  .groupItem{
-    transition: all 0.3s ease-out;
+
+  @media (min-width: $xl) {
+    padding: 16px;
+    left: -16px;
+    width: calc(100% + 32px);
+  }
+}
+.groupWrapperOpen {
+  transform: translateY(0);
+  .groupItem {
+    color: $grey-color;
+    height: 24px;
 
     @media (max-width: $md) {
-      padding: 0;
-      height: 0;
-      font-weight: bold;
-      font-size: 14px; 
-      line-height: 108%;
-      color: $white-color;
-      text-decoration: none;
-      overflow: hidden;
+      margin-top: 24px;
+      color: $light-gray-color;
     }
+  }
+}
 
-    @media (min-width: $md) {
+.groupItem {
+  transition: all 0.3s ease-out;
+
+  @media (max-width: $md) {
+    padding: 0;
+    height: 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 108%;
+    color: $white-color;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  @media (min-width: $md) {
     height: 24px;
     display: flex;
     align-items: center;
@@ -118,28 +118,27 @@
     opacity: 1;
     text-decoration: none;
     white-space: nowrap;
-    &:not(:last-child){
-        margin-bottom: 16px;
+    &:not(:last-child) {
+      margin-bottom: 16px;
     }
-     
-      &:hover{
-          color: $black-color;
-      }
+
+    &:hover {
+      color: $black-color;
     }
   }
+}
 
-  .listItem,.groupItem {
-
- @media (min-width: 920px) {
+.listItem,
+.groupItem {
+  @media (min-width: 920px) {
     font-size: $font-size-s;
-        
-      }
+  }
   @media (min-width: $lg) {
     font-size: 11px;
   }
-  
+
   @media (min-width: $xl) {
-    font-size:$font-size-xs;
+    font-size: $font-size-xs;
   }
 
   @media (min-width: 1280px) {
@@ -147,34 +146,30 @@
   }
 }
 
-.arrow{
-
+.arrow {
   @media (max-width: $md) {
     position: absolute;
     top: 20px;
     right: 0;
-    transform:  rotate(-90deg);
+    transform: rotate(-90deg);
     transition: all 0.3s ease-out;
-    
-    path{
-      fill:$light-gray-color;
+
+    path {
+      fill: $light-gray-color;
     }
   }
 
   @media (min-width: $md) {
-   transform: translateY(-1px);
-
+    transform: translateY(-1px);
   }
   @media (min-width: 920px) {
-   transform: translateY(-2px);
-
+    transform: translateY(-2px);
   }
-  
+
   @media (min-width: 1280px) {
-   transform: translateY(0);
-    
+    transform: translateY(0);
   }
 }
-.arrowOpen{
+.arrowOpen {
   transform: rotate(0deg);
 }

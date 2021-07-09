@@ -29,6 +29,7 @@ import navigationGroup from './objects/navigationGroup'
 import pathwaysItem from './objects/homePage/object/pathwaysItem'
 import servicesItem from './objects/homePage/object/servicesItem'
 import blackNavigation from './objects/blackNavigation'
+import ownGrowTransitionPage from './objects/ownGrowTransitionPage/ownGrowTransitionPage'
 import video from './objects/video'
 //  page sections
 import homeHero from './objects/homePage/sections/homeHero'
@@ -75,6 +76,7 @@ export default createSchema({
     homePartners,
     pathwaysItem,
     servicesItem,
+    ownGrowTransitionPage,
 
     connectWithUs,
     embedHTML,
