@@ -20,8 +20,8 @@ const Hero = ({hero, decor}) => {
       </div>
       {description && <span className={styles.description}>{description}</span>}{' '}
       <div className={styles.videoWrapper}>
-        <NextImage link={video.videoPoster} alt="video preview" />
-        {/* <Video video={video} /> */}
+        {/* <NextImage link={video.videoPoster} alt="video preview" /> */}
+        <Video video={video} />
       </div>
       {decor}
     </section>

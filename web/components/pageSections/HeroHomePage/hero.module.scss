@@ -1,4 +1,4 @@
-@import '../../../styles/variables/all.scss';
+@import "../../../styles/variables/all.scss";
 
 .heroSection {
   position: relative;
@@ -7,7 +7,7 @@
   background-size: cover;
   background-position: bottom 0 right 50%;
   color: $white-color;
-  z-index: 1;
+  z-index: auto;
 
   @media (min-width: $md) {
     padding-top: 102px;
@@ -79,7 +79,7 @@
   }
 }
 
-.propositionImage{
+.propositionImage {
   width: 100%;
 }
 
@@ -128,7 +128,7 @@
 }
 
 .itemNumber::after {
-  content: '';
+  content: "";
   position: absolute;
   left: -40px;
   top: 50%;

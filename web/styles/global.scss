@@ -27,7 +27,7 @@ footer {
 header {
   position: relative;
   height: 56px;
-  z-index: 100;
+  z-index: auto;
   background: $white-color;
   @media (min-width: $md) {
     height: 79px;

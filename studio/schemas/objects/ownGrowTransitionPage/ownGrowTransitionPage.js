@@ -44,12 +44,12 @@ export default {
         {
           name: 'title',
           type: 'string',
-          title: 'The time is now! Title'
+          title: 'Title'
         },
         {
           name: 'description',
           type: 'string',
-          title: 'The time is now! Description'
+          title: 'Description'
         },
         {
           name: 'link',
@@ -81,7 +81,7 @@ export default {
     {
       name: 'benefits',
       type: 'object',
-      title: 'Benefits to partnering with Koydol',
+      title: 'Benefits',
       fields: [
         {
           name: 'title',

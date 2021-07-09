@@ -19,8 +19,8 @@ const HomePage = ({title, hero, partners, pathways, services, config}) => {
   )
 }
 
-HomePage.getInitialProps = async (ctx) => {
-  return client
+export async function getStaticProps(context) {
+  const data = await client
     .fetch(
       groq`*[_type == "homePage" ][0]{
             title,partners, pathways,services,
@@ -32,7 +32,19 @@ HomePage.getInitialProps = async (ctx) => {
         }  
       }`
     )
-    .then((res) => ({...res}))
+    .then((res) => {
+      return {...res}
+    })
+
+  if (!data) {
+    return {
+      notFound: true
+    }
+  }
+
+  return {
+    props: {...data}
+  }
 }
 
 HomePage.propTypes = {

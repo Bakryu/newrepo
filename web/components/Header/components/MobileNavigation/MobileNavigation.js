@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import classNames from 'classnames/bind'
 import {useState} from 'react'
-import getUrl from '../../../../helpers/getUrl'
+import getUrl from '@/helpers/getUrl'
 
 import styles from './mobileNavigation.module.scss'
 
@@ -11,7 +11,7 @@ const MobileNavigation = ({logo, navigationItems, children}) => {
 
   const {link, slug, logoImage, alt} = logo
   return (
-    <div className={styles.mobileNavigation}>
+    <nav className={styles.mobileNavigation}>
       <Link href={link || slug}>
         <a className={styles.logoWrapper}>
           <img src={getUrl(logoImage)} className={styles.logo} alt={alt} />
@@ -31,7 +31,8 @@ const MobileNavigation = ({logo, navigationItems, children}) => {
         {children}
         {navigationItems}
       </div>
-    </div>
+      <div className={styles.navBg}></div>
+    </nav>
   )
 }
 
