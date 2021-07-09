@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind'
 import NextImage from '@/components/NextImage'
-import getUrl from '@/helpers/getUrl'
 import styles from '../footer.module.scss'
 
 const FooterGroupContacts = ({contacts}) => {
