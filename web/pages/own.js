@@ -20,7 +20,7 @@ const Own = ({ownContent, config}) => {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const data = await client
     .fetch(
       groq`*[_type == "ownPage"][0]{

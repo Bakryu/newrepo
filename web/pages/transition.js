@@ -20,7 +20,7 @@ const Transition = ({transitionContent, config}) => {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const data = await client
     .fetch(
       groq`*[_type == "transitionPage"][0]{
