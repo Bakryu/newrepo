@@ -21,7 +21,7 @@ const Video = ({video}) => {
             setOpen(true)
           }}
         >
-          <Image src="/play-button.svg" width={72} height={72} />
+          <img src="/play-button.svg" />
         </div>
         <NextImage link={videoPoster} />
       </div>
