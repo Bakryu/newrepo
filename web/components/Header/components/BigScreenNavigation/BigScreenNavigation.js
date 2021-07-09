@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import PropTypes from 'prop-types'
-import getUrl from '../../../../helpers/getUrl'
+import NextImage from '@/components/NextImage'
 
 import styles from './bigScreenNavigation.module.scss'
 
@@ -12,7 +12,9 @@ const BigScreenNavigation = ({logo, navigationItems, children}) => {
       <div className={styles.bigScreen}>
         <Link href={slug}>
           <a className={styles.logoWrapper}>
-            <img src={getUrl(logoImageMain)} className={styles.logo} alt={alt} />
+            <div className={styles.logo}>
+              <NextImage link={logoImageMain} alt={alt} />
+            </div>
           </a>
         </Link>
         {navigationItems}

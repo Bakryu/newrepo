@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import classNames from 'classnames/bind'
 import {useState} from 'react'
-import getUrl from '@/helpers/getUrl'
+import NextImage from '@/components/NextImage'
 
 import styles from './mobileNavigation.module.scss'
 
@@ -14,7 +14,9 @@ const MobileNavigation = ({logo, navigationItems, children}) => {
     <nav className={styles.mobileNavigation}>
       <Link href={link || slug}>
         <a className={styles.logoWrapper}>
-          <img src={getUrl(logoImage)} className={styles.logo} alt={alt} />
+          <div className={styles.logo}>
+            <NextImage link={logoImage} alt={alt} />
+          </div>
         </a>
       </Link>
       <div className={styles.burgerContainer}>

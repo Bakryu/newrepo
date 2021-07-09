@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import getUrl from '../../../helpers/getUrl'
-import {useSlider} from '../../../hooks'
-import getPartnersQuantity from '../../../helpers/getPartnersQuantity'
-import SLUGS from '../../../constants/slugs'
+import NextImage from '@/components/NextImage'
+import {useSlider} from '@/hooks/index'
+import getPartnersQuantity from '@/helpers/getPartnersQuantity'
+import SLUGS from '@/constants/slugs'
 
 import MobileSlider from '../../sliders/MobileSlider'
-import LinkTo from '../../LinkTo'
+import LinkTo from '@/components/LinkTo'
 import styles from './partners.module.scss'
 
 const PartnersHomePage = ({props}) => {
@@ -16,7 +16,9 @@ const PartnersHomePage = ({props}) => {
   const serviceList = servicesImageListDesc.map((image, idx) => {
     return (
       <div className={styles.imageWrapper} key={idx}>
-        <img src={getUrl(image)} className={styles.image} alt="partners logo" />
+        <div className={styles.image}>
+          <NextImage link={image} alt="partners logo" />
+        </div>
       </div>
     )
   })

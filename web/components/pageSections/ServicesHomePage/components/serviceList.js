@@ -1,4 +1,4 @@
-import getUrl from '../../../../helpers/getUrl'
+import NextImage from '@/components/NextImage'
 import Image from 'next/image'
 import classNames from 'classnames/bind'
 import styles from '../service.module.scss'
@@ -19,7 +19,10 @@ const serviceList = (servicesItemList) => {
         key={idx}
       >
         <div className={styles.imageWrapper}>
-          <img className={styles.itemImage} src={getUrl(item.image)} alt="service item image" />
+          <div className={styles.itemImage}>
+            <NextImage link={item.image} alt="service item image" />
+          </div>
+
           <div className={styles.itemBg}>
             <Image src={backgroundArray[countImageDecor]} alt="service item background" />
           </div>

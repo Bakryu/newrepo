@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind'
-import getUrl from '../../../helpers/getUrl'
+import NextImage from '@/components/NextImage'
+import getUrl from '@/helpers/getUrl'
 import styles from '../footer.module.scss'
 
 const FooterGroupContacts = ({contacts}) => {
@@ -28,7 +29,9 @@ const FooterGroupContacts = ({contacts}) => {
               target="_blank"
               rel="noreferrer"
             >
-              <img src={getUrl(item.image)} className={styles.socialImage} />
+              <div className={styles.socialImage}>
+                <NextImage link={item.image} alt="social" />
+              </div>
             </a>
           )
         })}

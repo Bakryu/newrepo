@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import getUrl from '../../../helpers/getUrl'
+import NextImage from '@/components/NextImage'
 import styles from '../footer.module.scss'
 
 const FooterGroupLogoTerms = ({logoData, terms}) => {
@@ -10,7 +10,9 @@ const FooterGroupLogoTerms = ({logoData, terms}) => {
       <Link href={linkAlternative || slug}>
         <a className={styles.logoWrapper}>
           {' '}
-          <img src={getUrl(logoImage)} className={styles.logo} alt={alt} />
+          <div className={styles.logo}>
+            <NextImage link={logoImage} alt={alt} />
+          </div>
         </a>
       </Link>
       <div className={styles.termsWrapper}>
