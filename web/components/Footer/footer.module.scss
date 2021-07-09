@@ -1,4 +1,4 @@
-@import '../../styles/variables/all.scss';
+@import "../../styles/variables/all.scss";
 .footer {
   position: relative;
   padding-top: 60px;
@@ -98,6 +98,7 @@
   }
 }
 .socialsWrapper {
+  display: flex;
   margin: 12px 0 25px;
   @media (min-width: $lg) {
     margin-top: 30px;
@@ -105,9 +106,17 @@
 }
 
 .socialsItem {
-  max-width: 27px;
+  position: relative;
+  display: flex;
+  width: 27px;
+  height: 27px;
   margin-right: 23px;
   cursor: pointer;
+}
+
+.socialImage {
+  width: 100%;
+  height: 100%;
 }
 
 .termsWrapper {

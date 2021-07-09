@@ -12,11 +12,11 @@
 }
 
 .logoWrapper {
-  max-width: 130px;
+  width: 130px;
   height: 18px;
 
   @media (min-width: $lg) {
-    max-width: 180px;
+    width: 180px;
     height: 26px;
   }
 }

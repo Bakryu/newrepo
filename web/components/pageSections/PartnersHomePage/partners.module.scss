@@ -1,4 +1,4 @@
-@import '../../../styles/variables/all.scss';
+@import "@/styles/variables/all.scss";
 
 .partners {
   padding: 45px 0 25px;
@@ -93,6 +93,9 @@
   }
 }
 .image {
+  height: 60px;
+  width: 120px;
+
   @media (min-width: $md) {
     transition: 0.3s;
     filter: grayscale(100%);

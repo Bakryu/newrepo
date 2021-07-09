@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
-import Image from 'next/image'
 import {useSlider} from '../../../hooks'
-import getUrl from '../../../helpers/getUrl'
+import StaticImage from '@/components/StaticImage'
+import getUrl from '@/helpers/getUrl'
 import Button from '../../buttons/Button'
 import styles from './hero.module.scss'
 import HeroSlider from '../../sliders/HeroSlider'
 import MobileSlider from '../../sliders/MobileSlider'
 import Video from '../../Video'
-import propositionDecor from './images/proposition-decor.png'
-import propositionDecorBlack from './images/proposition-decor-black.png'
+import propositionDecor from '@/public/image/proposition-decor.png'
+import propositionDecorBlack from '@/public/image/proposition-decor-black.png'
 
 const HeroHomePage = ({props}) => {
   const {title, subTitle, proposition, propositionList, heroBg, video} = props
@@ -37,15 +37,15 @@ const HeroHomePage = ({props}) => {
         <Button color={'yellow'} text={'send request'} onClick={() => {}} />
         <h3 className={styles.proposition}>
           <div className={styles.propositionDecor}>
-            <Image
-              src={propositionDecor}
+            <StaticImage
+              link={propositionDecor}
               className={styles.propositionDecor}
               alt="decorative element"
             />
           </div>
           <div className={styles.propositionDecorBlack}>
-            <Image
-              src={propositionDecorBlack}
+            <StaticImage
+              link={propositionDecorBlack}
               className={styles.propositionDecorBlack}
               alt="decorative element"
             />

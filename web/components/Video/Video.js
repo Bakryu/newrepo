@@ -1,8 +1,8 @@
-import {useState, useEffect, useRef} from 'react'
-import Image from 'next/image'
-import StaticImage from '../StaticImage/StaticImage'
+import {useState, useEffect} from 'react'
+import StaticImage from '../StaticImage'
 import classNames from 'classnames/bind'
 import NextImage from '@/components/NextImage'
+import playButton from '@/public/image/play-button.svg'
 import styles from './video.module.scss'
 
 const Video = ({video}) => {
@@ -22,7 +22,7 @@ const Video = ({video}) => {
             setOpen(true)
           }}
         >
-          <StaticImage link="/play-button.svg" alt="play button" />
+          <StaticImage link={playButton} alt="play button" />
         </div>
         <NextImage link={videoPoster} />
       </div>

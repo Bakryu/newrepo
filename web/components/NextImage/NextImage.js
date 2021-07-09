@@ -4,8 +4,8 @@ import styles from './nextImage.module.scss'
 
 const NextImage = ({link, alt}) => {
   const url = getUrl(link).url()
-  const myLoader = ({layout, src}) => {
-    return `${src}?l=${layout}`
+  const myLoader = ({src}) => {
+    return `${src}`
   }
   return (
     <div className={styles.image}>

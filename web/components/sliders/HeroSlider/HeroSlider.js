@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import Slick from 'react-slick'
-import getHeroSliderSize from '../../../helpers/getHeroSliderSize'
+import getHeroSliderSize from '@/helpers/getHeroSliderSize'
 
 import Arrow from './components/Arrow'
-import arrowLeft from '../images/arrow-left.svg'
-import arrowRight from '../images/arrow-right.svg'
+import arrowLeft from '@/public/image/arrow-left-black.svg'
+import arrowRight from '@/public/image/arrow-right.svg'
 
 const HeroSlider = ({items, settings, instance}) => {
   const defaultSettings = {

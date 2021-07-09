@@ -1,4 +1,4 @@
-@import "../../../../styles/variables/all.scss";
+@import "@/styles/variables/all.scss";
 .blackNavigation {
     display: flex;
     justify-content: space-between;
@@ -63,4 +63,10 @@
 .contactWrapper {
     display: flex;
     flex-direction: row;
+}
+
+.arrow {
+    position: relative;
+    width: 18px;
+    height: 18px;
 }

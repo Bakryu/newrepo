@@ -1,4 +1,4 @@
-@import '../../../styles/variables/all.scss';
+@import "@/styles/variables/all.scss";
 
 .services {
   padding: 35px 0 0;
@@ -189,7 +189,6 @@
     padding-top: 28px;
     @media (min-width: $md) {
       padding-top: 60px;
-
     }
   }
 }
@@ -225,6 +224,7 @@
 .itemBg {
   position: absolute;
   width: 100%;
+  height: 100%;
 }
 
 .descriptionWrapper {

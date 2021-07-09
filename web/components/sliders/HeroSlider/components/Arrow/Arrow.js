@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import StaticImage from '@/components/StaticImage'
 import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 
@@ -11,7 +11,7 @@ const Arrow = ({onClick, children, direction, arrowImage}) => {
   return (
     <button className={classNames(styles.container, directionStyles)} onClick={onClick}>
       {children}
-      <Image className={styles.arrowImage} src={arrowImage} alt="arrow" />
+      <StaticImage className={styles.arrowImage} link={arrowImage} alt="arrow" />
     </button>
   )
 }
