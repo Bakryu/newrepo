@@ -9,7 +9,7 @@
         "@/pages/*": ["pages/*"],
         "@/styles/*": ["styles/*"],
         "@/scenes/*": ["scenes/*"],
-        "@/static/*": ["static/*"],
+        "@/public/*": ["public/*"],
 
       }
     }
