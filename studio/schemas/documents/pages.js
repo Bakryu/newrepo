@@ -3,25 +3,31 @@ export default {
   type: 'document',
   title: 'Pages',
   fields: [
-    // {
-    // of: [
     {
       name: 'testimonialsPage',
       type: 'testimonialsPage',
-      title: 'Testimonials page',
+      title: 'Testimonials page'
     },
     {
       name: 'homePage',
       type: 'homePage',
-      title: 'Home page',
+      title: 'Home page'
     },
-    // ],
-    // },
+    {
+      name: 'termsOfUsePage',
+      type: 'termsOfUsePage',
+      title: 'Terms of Use page'
+    },
+    {
+      name: 'privacyPolicyPage',
+      type: 'privacyPolicyPage',
+      title: 'Privacy Policy'
+    }
   ],
 
   preview: {
     select: {
-      title: 'title',
-    },
-  },
+      title: 'title'
+    }
+  }
 }

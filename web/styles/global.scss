@@ -1,0 +1,35 @@
+@import "./variables/all.scss";
+html,
+* {
+  font-family: $font-inter;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+section,
+header,
+footer {
+  padding: 0 16px;
+  @media (min-width: $md) {
+    padding: 0 80px;
+  }
+  @media (min-width: 1600px) {
+    padding-left: calc(50% - 720px) !important;
+    padding-right: calc(50% - 720px) !important;
+  }
+}
+
+header {
+  position: relative;
+  height: 56px;
+  z-index: 100;
+  background: $white-color;
+  @media (min-width: $md) {
+    height: 79px;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../../../styles/variables/all.scss';
+
+.bigScreen {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 34px 0 19px;
+  background: $white-color;
+  margin-top: 33px;
+  z-index: auto;
+}
+
+.logoWrapper{
+  max-width: 130px;
+  height: 18px;
+
+  @media (min-width: $lg) {
+  max-width: 180px;
+  height: 26px;
+ }
+}
+
+.logo{
+  height: 100%;
+}

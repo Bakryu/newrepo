@@ -1,22 +1,45 @@
 import client from '../client'
-// import groq from 'groq'
+import groq from 'groq'
+import PropTypes from 'prop-types'
 
-function index({ a }) {
-    // [_id == "page" && ]
-    const query = `*[_type == "pages" && title == "Home page"]`
-    // const params = {minSeats: 2}
-    
-    client.fetch(query).then((bikes) => {
-        console.log(bikes
-        )
-    })
+import MainContainer from '../components/MainContainer'
+import HeroHomePage from '../components/pageSections/HeroHomePage'
+import PathWayHomePage from '../components/pageSections/PathWayHomePage'
+import ServicesHomePage from '../components/pageSections/ServicesHomePage'
+import PartnersHomePage from '../components/pageSections/PartnersHomePage'
 
-    
-    return (
-        <div>
-            Home page
-        </div>
-    )
+const HomePage = ({title, hero, partners, pathways, services, config}) => {
+  return (
+    <>
+      <HeroHomePage props={hero} />
+      <PathWayHomePage props={pathways} />
+      <ServicesHomePage props={services} />
+      <PartnersHomePage props={partners} />
+    </>
+  )
 }
 
-export default index;
+HomePage.getInitialProps = async (ctx) => {
+  return client
+    .fetch(
+      groq`*[_type == "homePage" ][0]{
+            title,partners, pathways,services,
+            hero{title, subTitle, proposition,
+            propositionList,heroBg,
+            video{videoPoster,
+            "videoUrl": videoUrl.asset->url
+          }
+        }  
+      }`
+    )
+    .then((res) => ({...res}))
+}
+
+HomePage.propTypes = {
+  title: PropTypes.string,
+  hero: PropTypes.object,
+  partners: PropTypes.object,
+  pathways: PropTypes.object,
+  services: PropTypes.object
+}
+export default HomePage

@@ -15,18 +15,15 @@
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.6",
-    "@sanity/cli": "^2.0.0",
-    "@trivago/prettier-plugin-sort-imports": "^2.0.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^1.7.0",
+    "@sanity/cli": "^2.12.2",
+    "eslint": "^7.29.0",
+    "file-loader": "^6.2.0",
     "lerna": "^3.9.0",
-    "prettier": "^2.3.1",
-    "prettier-config-halo-lab": "^1.0.7",
-    "stylelint-config-halo-lab": "^1.0.4"
+    "url-loader": "^4.1.1"
+  },
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "css-loader": "^5.2.6",
+    "style-loader": "^2.0.0"
   }
 }
