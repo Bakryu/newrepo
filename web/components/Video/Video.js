@@ -2,7 +2,6 @@ import {useState, useEffect, useRef} from 'react'
 import Image from 'next/image'
 import classNames from 'classnames/bind'
 import NextImage from '@/components/NextImage'
-import buttonImage from '@/public/play-button.svg'
 import styles from './video.module.scss'
 
 const Video = ({video}) => {
@@ -22,7 +21,7 @@ const Video = ({video}) => {
             setOpen(true)
           }}
         >
-          <Image src={buttonImage} width={72} height={72} />
+          <Image src="/play-button.svg" width={72} height={72} />
         </div>
         <NextImage link={videoPoster} />
       </div>
