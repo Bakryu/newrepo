@@ -52,7 +52,7 @@ module.exports = {
     })
   },
   images: {
-    loader: 'imgix',
+    // loader: 'imgix', // remove this field on desctop
     domains: ['cdn.sanity.io']
   },
   sassOptions: {

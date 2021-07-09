@@ -1,6 +1,5 @@
-
-@import '../../../../styles/variables/all.scss';
-.blackNavigation{
+@import "../../../../styles/variables/all.scss";
+.blackNavigation {
     display: flex;
     justify-content: space-between;
     background-color: $black-color;
@@ -8,27 +7,28 @@
     @media (max-width: $md) {
         transform: translate(-5px);
         padding-bottom: 14px;
-        .contactWrapper{
+        .contactWrapper {
             display: none;
         }
     }
 
     @media (min-width: $md) {
-    width: 100vw;
-    position: absolute;
-    top: -33px;
-    right: 0;
-    left: 0;
-    flex-direction: row;
-    padding: 11px 80px;
-    z-index: 1;
+        width: 100vw;
+        position: absolute;
+        top: -33px;
+        right: 0;
+        left: 0;
+        flex-direction: row;
+        padding: 11px 80px;
+        z-index: 2;
     }
     @media (min-width: 1600px) {
         padding-left: calc(50% - 720px) !important;
         padding-right: calc(50% - 720px) !important;
-      }
+    }
 }
-.link,.linkText{
+.link,
+.linkText {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -40,27 +40,27 @@
     color: $white-color;
 }
 
-.linkText{
-    color:rgba($white-color,0.5)
+.linkText {
+    color: rgba($white-color, 0.5);
 }
 
-.link{
+.link {
     opacity: 0.5;
-    &:hover{
+    &:hover {
         opacity: 1;
     }
-    
 }
 
-.contact{
+.contact {
     margin-left: 3px;
-    color:$white-color;
+    color: $white-color;
 }
 
-.phoneNumber{
+.phoneNumber {
     margin-right: 36px;
 }
 
-.contactWrapper{
-    display: flex;flex-direction: row;
+.contactWrapper {
+    display: flex;
+    flex-direction: row;
 }

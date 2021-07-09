@@ -1,28 +1,27 @@
-@import '../../../../styles/variables/all.scss';
+@import "../../../../styles/variables/all.scss";
 
-.mobileNavigation{
+.mobileNavigation {
     position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    padding: 16px ;
-    z-index: auto;
-    background:$white-color;
-
+    padding: 16px;
+    z-index: 10;
+    background-color: $white-color;
 }
 
-.logoWrapper{
+.logoWrapper {
     display: block;
     height: 24px;
+    z-index: 1;
 }
-.logo{
-    
+.logo {
     max-height: 100%;
 }
 
-.listWrapper{
+.listWrapper {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -30,20 +29,19 @@
     width: 100vw;
     background-color: $black-color;
     z-index: -100;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.listWrapperActive{
+.listWrapperActive {
     transform: translateY(100%);
 }
 
-
-
-.burgerContainer{
+.burgerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 1;
 
     .burger {
         display: flex;
@@ -64,10 +62,9 @@
             transition: 0.2s;
         }
     }
-   .active {
+    .active {
         .bar {
             width: 19px;
-          
         }
         .bar:nth-child(1) {
             transform: rotateZ(45deg) translate(4.5px, 5.5px);
@@ -80,5 +77,15 @@
         }
     }
 }
-    
 
+.navBg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $white-color;
+    width: 100%;
+    height: 100%;
+    @media (min-width: $md) {
+        display: none;
+    }
+}
