@@ -1,4 +1,4 @@
-@import "../../../../styles/variables/all.scss";
+@import "@/styles/variables/all.scss";
 
 .proposal {
     position: relative;
@@ -15,6 +15,10 @@
         padding-bottom: 84px;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    @media (min-width: 1440px) {
+        padding-top: 270px;
     }
 }
 
