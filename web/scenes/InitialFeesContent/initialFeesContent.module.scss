@@ -129,6 +129,7 @@
 }
 
 .afterTable {
+    position: relative;
     display: flex;
     flex-direction: column;
 
@@ -137,8 +138,11 @@
         flex-direction: row;
         justify-content: space-between;
         a {
-            margin: 67px 0 0 10px;
+            position: absolute;
+            left: calc(100% - 160px);
+            bottom: 30px;
             max-height: 29px;
+            white-space: nowrap;
             min-width: 112px;
         }
     }
