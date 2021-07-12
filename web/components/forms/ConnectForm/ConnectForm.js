@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types'
 import Form from './components/Form'
 import FormDecor from './components/FormDecor'
+import ANCHORS from '@/constants/anchors'
 
 import styles from './connectForm.module.scss'
 
 const ConnectForm = ({connectWithUsForm, buttons, privacyPolicy, termsOfUse}) => {
   const {formTitle, formDescription, agreements, inputList} = connectWithUsForm
   return (
-    <section className={styles.connectForm}>
+    <section className={styles.connectForm} id={ANCHORS.SEND_REQUEST}>
       <div className={styles.contentWrapper}>
         <div className={styles.descriptionWrapper}>
           <h1 className={styles.title}>{formTitle}</h1>

@@ -1,6 +1,5 @@
 import styles from './hero.module.scss'
 import PropTypes from 'prop-types'
-import NextImage from '@/components/NextImage'
 import Video from '@/components/Video'
 
 const Hero = ({hero, decor}) => {
@@ -20,7 +19,6 @@ const Hero = ({hero, decor}) => {
       </div>
       {description && <span className={styles.description}>{description}</span>}{' '}
       <div className={styles.videoWrapper}>
-        {/* <NextImage link={video.videoPoster} alt="video preview" /> */}
         <Video video={video} />
       </div>
       {decor}

@@ -1,9 +1,10 @@
-@import '../../../styles/variables/all.scss';
+@import "../../../styles/variables/all.scss";
 
 .connectForm {
   width: 100%;
   padding-top: 79px;
   padding-bottom: 20px;
+  scroll-behavior: smooth;
   @media (min-width: $md) {
     padding-top: 63px;
     padding-bottom: 4px;

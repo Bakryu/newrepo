@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import LinkTo from '@/components/LinkTo'
 import NextImage from '@/components/NextImage'
 import styles from './benefits.module.scss'
 
