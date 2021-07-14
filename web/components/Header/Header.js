@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import useResize from 'use-resizing'
-import screenWidth from '@/constants/screenWidth'
 import MobileNavigation from './components/MobileNavigation'
 import BigScreenNavigation from './components/BigScreenNavigation'
 import NavigationAccordion from './components/NavigationAccordion'
@@ -9,22 +7,6 @@ import BlackNavigation from './components/BlackNavigation'
 import styles from './header.module.scss'
 
 const Header = ({navigationList, logo, contacts, blackNavigation}) => {
-  const useActiveNavigation = () => {
-    const screen = useResize()
-
-    if (screen.width < screenWidth.bigScreen) {
-      return (
-        <MobileNavigation logo={logo} navigationItems={navigationItems}>
-          <BlackNavigation contacts={contacts} blackNavigation={blackNavigation} />
-        </MobileNavigation>
-      )
-    }
-    return (
-      <BigScreenNavigation logo={logo} navigationItems={navigationItems}>
-        <BlackNavigation contacts={contacts} blackNavigation={blackNavigation} />
-      </BigScreenNavigation>
-    )
-  }
   const createNavigationList = (list) => {
     return (
       <ul className={styles.listWrapper}>
@@ -46,7 +28,16 @@ const Header = ({navigationList, logo, contacts, blackNavigation}) => {
   }
 
   const navigationItems = createNavigationList(navigationList)
-  return <header>{useActiveNavigation()}</header>
+  return (
+    <header>
+      <MobileNavigation logo={logo} navigationItems={navigationItems}>
+        <BlackNavigation contacts={contacts} blackNavigation={blackNavigation} />
+      </MobileNavigation>
+      <BigScreenNavigation logo={logo} navigationItems={navigationItems}>
+        <BlackNavigation contacts={contacts} blackNavigation={blackNavigation} />
+      </BigScreenNavigation>
+    </header>
+  )
 }
 
 export default Header

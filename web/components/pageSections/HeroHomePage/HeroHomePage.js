@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import {useSlider} from '../../../hooks'
+import useSlider from '@/hooks/useSlider'
 import StaticImage from '@/components/StaticImage'
 import getUrl from '@/helpers/getUrl'
 import Button from '../../buttons/Button'

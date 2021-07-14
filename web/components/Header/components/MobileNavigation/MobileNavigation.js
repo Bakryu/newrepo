@@ -12,7 +12,7 @@ const MobileNavigation = ({logo, navigationItems, children}) => {
   const {link, slug, logoImage, alt} = logo
   return (
     <nav className={styles.mobileNavigation}>
-      <Link href={link || slug}>
+      <Link href={slug}>
         <a className={styles.logoWrapper}>
           <div className={styles.logo}>
             <NextImage link={logoImage} alt={alt} />

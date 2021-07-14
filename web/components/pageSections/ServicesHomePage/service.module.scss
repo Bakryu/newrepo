@@ -98,7 +98,10 @@
   }
   .itemBg {
     left: 0;
-    bottom: 0;
+    bottom: -4px;
+    @media (min-width: $md) {
+      bottom: -9px;
+    }
   }
   .descriptionWrapper {
     padding-bottom: 43px;
@@ -183,7 +186,10 @@
   }
   .itemBg {
     left: 0;
-    top: 0;
+    top: -5px;
+    @media (min-width: $md) {
+      top: -9px;
+    }
   }
   .descriptionWrapper {
     padding-top: 28px;
