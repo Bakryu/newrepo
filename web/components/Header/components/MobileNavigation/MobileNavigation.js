@@ -9,7 +9,7 @@ import styles from './mobileNavigation.module.scss'
 const MobileNavigation = ({logo, navigationItems, children}) => {
   const [isOpen, setOpen] = useState(false)
 
-  const {link, slug, logoImage, alt} = logo
+  const {slug, logoImage, alt} = logo
   return (
     <nav className={styles.mobileNavigation}>
       <Link href={slug}>

@@ -20,7 +20,7 @@ const Own = ({ownContent, config}) => {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const data = await client
     .fetch(
       groq`*[_type == "ownPage"][0]{

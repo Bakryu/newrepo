@@ -2,13 +2,12 @@ import client from '../client'
 import groq from 'groq'
 import PropTypes from 'prop-types'
 
-import MainContainer from '../components/MainContainer'
 import HeroHomePage from '../components/pageSections/HeroHomePage'
 import PathWayHomePage from '../components/pageSections/PathWayHomePage'
 import ServicesHomePage from '../components/pageSections/ServicesHomePage'
 import PartnersHomePage from '../components/pageSections/PartnersHomePage'
 
-const HomePage = ({title, hero, partners, pathways, services, config}) => {
+const HomePage = ({hero, partners, pathways, services}) => {
   return (
     <>
       <HeroHomePage props={hero} />
@@ -19,7 +18,7 @@ const HomePage = ({title, hero, partners, pathways, services, config}) => {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const data = await client
     .fetch(
       groq`*[_type == "homePage" ][0]{

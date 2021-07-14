@@ -7,7 +7,7 @@ const Process = ({processContent}) => {
   return <ProcessContent processContent={processContent} />
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const data = await client
     .fetch(
       groq`*[_type == "processPage"][0]{

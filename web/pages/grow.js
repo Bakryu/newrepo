@@ -20,7 +20,7 @@ const Grow = ({growContent, config}) => {
   )
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const data = await client
     .fetch(
       groq`*[_type == "growPage"][0]{

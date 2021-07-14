@@ -11,7 +11,7 @@ const Header = ({navigationList, logo, contacts, blackNavigation}) => {
     return (
       <ul className={styles.listWrapper}>
         {list.map((item, idx) => {
-          if (item.hasOwnProperty('groupList')) {
+          if (Object.prototype.hasOwnProperty.call(item, 'groupList')) {
             return <NavigationAccordion item={item} key={idx} />
           }
 
