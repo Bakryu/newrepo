@@ -8,16 +8,17 @@ const ListItem = ({item}) => {
 
   const {title, description, descriptionList} = item
 
+  const toggleItem = () => {
+    setOpen(!isOpen)
+  }
+
   return (
     <div className={styles.item}>
       <div className={styles.titleWrapper}>
-        <h4 className={styles.title}>{title}</h4>
-        <div
-          className={classNames(styles.button, isOpen && styles.active)}
-          onClick={() => {
-            setOpen(!isOpen)
-          }}
-        >
+        <h4 className={styles.title} onClick={toggleItem}>
+          {title}
+        </h4>
+        <div className={classNames(styles.button, isOpen && styles.active)} onClick={toggleItem}>
           <span></span>
           <span></span>
         </div>
