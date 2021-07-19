@@ -144,6 +144,11 @@ export default {
           name: 'buttonLearnMore',
           type: 'string',
           title: 'Learn More'
+        },
+        {
+          name: 'buttonGoToHomePage',
+          type: 'string',
+          title: 'Go To Home Page'
         }
       ]
     }
