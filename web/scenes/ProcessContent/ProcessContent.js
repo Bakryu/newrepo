@@ -9,21 +9,26 @@ import styles from './processContent.module.scss'
 const ProcessContent = ({processContent}) => {
   const {title, description, processList} = processContent
   const screenSize = useResize()
+
+  const getImageSize = (idx, arrayLength) => {
+    let width = 352
+    const height = 210
+    if (
+      screenSize.width >= screenWidthConstant.BIG_SCREEN &&
+      (idx === 0 || idx === arrayLength - 1)
+    ) {
+      width = 736
+    }
+    return {width, height}
+  }
+
   return (
     <section className={styles.process}>
       <h1 className={styles.title}>{title}</h1>
       <span className={styles.description}>{description}</span>
-
       <div className={styles.list}>
         {processList.map(({image, alt, title, description}, idx) => {
-          let width = 352
-          const height = 210
-          if (
-            screenSize.width >= screenWidthConstant.BIG_SCREEN &&
-            (idx === 0 || idx === processList.length - 1)
-          ) {
-            width = 736
-          }
+          const {width, height} = getImageSize(idx, processList.length)
           return (
             <div className={styles.listItem} key={idx}>
               <NextImage link={image} alt={alt} width={width} height={height} />
