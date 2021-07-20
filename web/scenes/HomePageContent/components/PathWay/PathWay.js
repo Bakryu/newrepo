@@ -1,12 +1,14 @@
 import classNames from 'classnames/bind'
+import PropTypes from 'prop-types'
+
 import NextImage from '@/components/NextImage'
 import LinkTo from '@/components/LinkTo'
 import DecorElement from '@/components/DecorElement'
 import COLORS from '@/constants/colors'
 import styles from './pathway.module.scss'
 
-const PathWayHomePage = ({props}) => {
-  const {pathwaysItemList, title, pathwaysImage} = props
+const PathWay = ({pathways}) => {
+  const {pathwaysItemList, title, pathwaysImage} = pathways
 
   return (
     <section className={styles.pathWays}>
@@ -53,4 +55,8 @@ const PathWayHomePage = ({props}) => {
   )
 }
 
-export default PathWayHomePage
+PathWay.propTypes = {
+  pathways: PropTypes.object
+}
+
+export default PathWay

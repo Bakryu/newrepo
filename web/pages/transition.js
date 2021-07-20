@@ -1,22 +1,26 @@
 import client from '../client'
 import groq from 'groq'
 import PropTypes from 'prop-types'
+
+import MainContainer from '@/components/MainContainer'
 import OwnGrowTransition from '@/scenes/OwnGrowTransition'
 import HeaderDecor from '@/scenes/OwnGrowTransition/components/decorElements/growTransition/HeaderDecor'
 import ProposalDecor from '@/scenes/OwnGrowTransition/components/decorElements/growTransition/ProposalDecor'
 import BenefitsDecor from '@/scenes/OwnGrowTransition/components/decorElements/transition/BenefitsDecor'
 
-const Transition = ({transitionContent, config}) => {
+const Transition = ({transitionContent, config, formQuery}) => {
   return (
-    <OwnGrowTransition
-      content={transitionContent}
-      navigation={config.ownGrowTransitionNavigation}
-      buttonName={config.buttons.buttonLearnMore}
-    >
-      <HeaderDecor />
-      <ProposalDecor />
-      <BenefitsDecor />
-    </OwnGrowTransition>
+    <MainContainer config={config} connectWithUsForm={formQuery}>
+      <OwnGrowTransition
+        content={transitionContent}
+        navigation={config.ownGrowTransitionNavigation}
+        buttonName={config.buttons.buttonLearnMore}
+      >
+        <HeaderDecor />
+        <ProposalDecor />
+        <BenefitsDecor />
+      </OwnGrowTransition>
+    </MainContainer>
   )
 }
 

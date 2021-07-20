@@ -1,7 +1,6 @@
 import React from 'react'
 import BaseApp from 'next/app'
 import client from '../client'
-import MainContainer from '../components/MainContainer'
 import '../styles/global.scss'
 
 const siteConfigQuery = `
@@ -91,11 +90,7 @@ class App extends BaseApp {
 
   render() {
     const {Component, pageProps} = this.props
-    return (
-      <MainContainer config={pageProps.config} connectWithUsForm={pageProps.formQuery}>
-        <Component {...pageProps} />
-      </MainContainer>
-    )
+    return <Component {...pageProps} />
   }
 }
 

@@ -1,10 +1,16 @@
 import client from '../client'
 import groq from 'groq'
 import PropTypes from 'prop-types'
+
+import MainContainer from '@/components/MainContainer'
 import ProcessContent from '@/scenes/ProcessContent'
 
-const Process = ({processContent}) => {
-  return <ProcessContent processContent={processContent} />
+const Process = ({processContent, config, formQuery}) => {
+  return (
+    <MainContainer config={config} connectWithUsForm={formQuery}>
+      <ProcessContent processContent={processContent} />
+    </MainContainer>
+  )
 }
 
 export async function getStaticProps() {

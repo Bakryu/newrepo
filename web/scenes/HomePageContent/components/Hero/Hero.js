@@ -2,16 +2,16 @@ import PropTypes from 'prop-types'
 import useSlider from '@/hooks/useSlider'
 import StaticImage from '@/components/StaticImage'
 import getUrl from '@/helpers/getUrl'
-import Button from '../../buttons/Button'
+import Button from '@/components/buttons/Button'
 import styles from './hero.module.scss'
-import HeroSlider from '../../sliders/HeroSlider'
-import MobileSlider from '../../sliders/MobileSlider'
-import Video from '../../Video'
+import HeroSlider from '@/components/sliders/HeroSlider'
+import MobileSlider from '@/components/sliders/MobileSlider'
+import Video from '@/components/Video'
 import propositionDecor from '@/public/image/proposition-decor.png'
 import propositionDecorBlack from '@/public/image/proposition-decor-black.png'
 
-const HeroHomePage = ({props}) => {
-  const {title, subTitle, proposition, propositionList, heroBg, video} = props
+const Hero = ({hero}) => {
+  const {title, subTitle, proposition, propositionList, heroBg, video} = hero
 
   const sliderItems = propositionList.map((item, idx) => {
     return (
@@ -61,7 +61,7 @@ const HeroHomePage = ({props}) => {
   )
 }
 
-HeroHomePage.propTypes = {
+Hero.propTypes = {
   title: PropTypes.string,
   subTitle: PropTypes.string,
   proposition: PropTypes.string,
@@ -69,4 +69,4 @@ HeroHomePage.propTypes = {
   heroBg: PropTypes.array
 }
 
-export default HeroHomePage
+export default Hero

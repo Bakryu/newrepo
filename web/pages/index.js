@@ -2,19 +2,14 @@ import client from '../client'
 import groq from 'groq'
 import PropTypes from 'prop-types'
 
-import HeroHomePage from '../components/pageSections/HeroHomePage'
-import PathWayHomePage from '../components/pageSections/PathWayHomePage'
-import ServicesHomePage from '../components/pageSections/ServicesHomePage'
-import PartnersHomePage from '../components/pageSections/PartnersHomePage'
+import MainContainer from '@/components/MainContainer'
+import HomePageContent from '@/scenes/HomePageContent'
 
-const HomePage = ({hero, partners, pathways, services}) => {
+const HomePage = ({hero, partners, pathways, services, config, formQuery}) => {
   return (
-    <>
-      <HeroHomePage props={hero} />
-      <PathWayHomePage props={pathways} />
-      <ServicesHomePage props={services} />
-      <PartnersHomePage props={partners} />
-    </>
+    <MainContainer config={config} connectWithUsForm={formQuery}>
+      <HomePageContent hero={hero} partners={partners} pathways={pathways} services={services} />
+    </MainContainer>
   )
 }
 

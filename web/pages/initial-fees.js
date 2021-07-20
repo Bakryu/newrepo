@@ -1,14 +1,18 @@
 import client from '../client'
 import groq from 'groq'
 import PropTypes from 'prop-types'
+
+import MainContainer from '@/components/MainContainer'
 import InitialFeesContent from '@/scenes/InitialFeesContent'
 
-const InitialFees = ({initialFeesContent, config}) => {
+const InitialFees = ({initialFeesContent, config, formQuery}) => {
   return (
-    <InitialFeesContent
-      initialFeesContent={initialFeesContent}
-      buttonName={config.buttons.buttonSendRequest}
-    />
+    <MainContainer config={config} connectWithUsForm={formQuery}>
+      <InitialFeesContent
+        initialFeesContent={initialFeesContent}
+        buttonName={config.buttons.buttonSendRequest}
+      />
+    </MainContainer>
   )
 }
 

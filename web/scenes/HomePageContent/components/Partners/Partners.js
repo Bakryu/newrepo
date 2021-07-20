@@ -4,12 +4,12 @@ import {useSlider} from '@/hooks/index'
 import getPartnersQuantity from '@/helpers/getPartnersQuantity'
 import SLUGS from '@/constants/slugs'
 
-import MobileSlider from '../../sliders/MobileSlider'
+import MobileSlider from '@/components/sliders/MobileSlider'
 import LinkTo from '@/components/LinkTo'
 import styles from './partners.module.scss'
 
-const PartnersHomePage = ({props}) => {
-  const {title, subTitle, servicesImageListDesc, linkName} = props
+const Partners = ({partners}) => {
+  const {title, subTitle, servicesImageListDesc, linkName} = partners
 
   const {rows, slidesToShow} = getPartnersQuantity()
 
@@ -49,10 +49,10 @@ const PartnersHomePage = ({props}) => {
   )
 }
 
-PartnersHomePage.propTypes = {
+Partners.propTypes = {
   title: PropTypes.string,
   subTitle: PropTypes.string,
   servicesImageListDesc: PropTypes.array
 }
 
-export default PartnersHomePage
+export default Partners

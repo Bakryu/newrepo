@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types'
+
 import serviceList from './components/serviceList'
-import MobileSlider from '../../sliders/MobileSlider'
-import useSlider from '../../../hooks/useSlider'
+import MobileSlider from '@/components/sliders/MobileSlider'
+import useSlider from '@/hooks/useSlider'
 
 import styles from './service.module.scss'
 
-const ServicesHomePage = ({props}) => {
-  const {title, subTitle, servicesItemList} = props
+const Services = ({services}) => {
+  const {title, subTitle, servicesItemList} = services
   const settings = {slidesToShow: 1}
   const listItem = serviceList(servicesItemList)
   const slider = useSlider(
@@ -23,4 +25,8 @@ const ServicesHomePage = ({props}) => {
   )
 }
 
-export default ServicesHomePage
+Services.propTypes = {
+  services: PropTypes.object
+}
+
+export default Services
