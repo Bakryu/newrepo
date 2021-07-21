@@ -1,8 +1,8 @@
-@import '../../../styles/variables/all.scss';
+@import "@/styles/variables/all.scss";
 
 body section .buttons {
   &::before {
-    content: '';
+    content: "";
     display: block;
     width: 8px;
     height: 8px;
