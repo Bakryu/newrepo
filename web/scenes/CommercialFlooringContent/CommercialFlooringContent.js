@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 
 import List from './components/List'
+import DecorElements from './components/DecorElements'
 import styles from './commercialFlooringContent.module.scss'
 
 const CommercialFlooringContent = ({commercialFlooringContent}) => {
@@ -11,7 +12,7 @@ const CommercialFlooringContent = ({commercialFlooringContent}) => {
       <span className={styles.description}>{description}</span>
       <List list={list} />
 
-      {/* <DecorElement /> */}
+      <DecorElements />
     </section>
   )
 }

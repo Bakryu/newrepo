@@ -1,4 +1,4 @@
-import {useInput} from '@/hooks'
+import useInput from '@/hooks/useInput'
 
 const Input = ({name, placeholder, validations}) => {
   const {value, onChange, onBlur /*{isDirty, isEmpty, isValidInput}*/} = useInput({...validations})

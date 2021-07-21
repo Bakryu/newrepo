@@ -7,7 +7,8 @@ const COLORS = {
   GREY: 'grey',
   RED: 'red',
   GREEN: 'green',
-  BROWN: 'brown'
+  BROWN: 'brown',
+  DIM: 'dim'
 }
 
 export default COLORS

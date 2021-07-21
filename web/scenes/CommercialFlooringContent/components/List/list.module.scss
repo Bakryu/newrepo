@@ -79,6 +79,9 @@
         justify-content: space-between;
         align-items: flex-start;
         padding-bottom: 120px;
+        &:last-child {
+            padding-bottom: 0;
+        }
     }
 }
 
@@ -158,4 +161,9 @@
     margin-top: 20px;
     font-size: $font-size-sm;
     line-height: 178%;
+
+    @media (min-width: $lg) {
+        font-size: $font-size-md;
+        line-height: 150%;
+    }
 }
