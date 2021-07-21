@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
-import Input from '../../../Input'
-import Button from '../../../buttons/Button'
+import Input from '@/components/Input'
+import Button from '@/components/buttons/Button'
 import styles from './form.module.scss'
 
 const Form = ({inputList, buttonText, agreements, privacyPolicy, termsOfUse}) => {

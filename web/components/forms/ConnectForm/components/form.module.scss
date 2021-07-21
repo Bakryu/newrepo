@@ -1,4 +1,4 @@
-@import '../../../../styles/variables/all.scss';
+@import "@/styles/variables/all.scss";
 .form {
   display: flex;
   flex-direction: column;
@@ -27,8 +27,6 @@
     input {
       width: 100%;
     }
-
-    
   }
   @media (min-width: 900px) {
     :nth-child(3) {
@@ -39,7 +37,6 @@
       width: 48%;
       min-width: 136px;
     }
-
   }
 }
 .agreements {

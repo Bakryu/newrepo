@@ -6,7 +6,7 @@ const Button = ({color, onClick, text, link}) => {
   return (
     <button className={classNames(styles[color], styles.buttonStyles)} onClick={onClick}>
       {text}
-      <a className={link && styles.link} href={link}></a>
+      {link && <a className={styles.link} href={link} />}
     </button>
   )
 }

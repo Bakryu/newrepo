@@ -1,5 +1,5 @@
-import COLORS from '../../../../constants/colors'
-import DecorElement from '../../../DecorElement'
+import COLORS from '@/constants/colors'
+import DecorElement from '@/components/DecorElement'
 
 import styles from './decor.module.scss'
 const FormDecor = () => {
