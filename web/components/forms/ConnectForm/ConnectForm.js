@@ -6,7 +6,7 @@ import ANCHORS from '@/constants/anchors'
 import styles from './connectForm.module.scss'
 
 const ConnectForm = ({connectWithUsForm, buttons, privacyPolicy, termsOfUse}) => {
-  const {formTitle, formDescription, agreements, inputList} = connectWithUsForm
+  const {formTitle, formDescription, agreements, inputList, formEndPoint} = connectWithUsForm
   return (
     <section className={styles.connectForm} id={ANCHORS.SEND_REQUEST}>
       <div className={styles.contentWrapper}>
@@ -21,6 +21,7 @@ const ConnectForm = ({connectWithUsForm, buttons, privacyPolicy, termsOfUse}) =>
             agreements={agreements}
             privacyPolicy={privacyPolicy}
             termsOfUse={termsOfUse}
+            formEndPoint={formEndPoint}
           />
         </div>
         <FormDecor />
