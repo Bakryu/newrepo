@@ -12,6 +12,7 @@ module.exports = {
   globals: {
     window: true,
     document: true,
-    module: true
+    module: true,
+    process: true
   }
 }

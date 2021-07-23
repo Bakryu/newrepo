@@ -59,6 +59,11 @@ export default {
       name: 'termsOfUse',
       type: 'string',
       title: 'Terms Of Use'
+    },
+    {
+      name: 'formEndPoint',
+      type: 'string',
+      title: 'enter End Points Url'
     }
   ]
 }

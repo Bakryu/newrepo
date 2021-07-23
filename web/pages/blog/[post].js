@@ -1,133 +1,89 @@
-// import {useRouter} from 'next/router'
-// import client from '../../client'
-// import groq from 'groq'
-// import PropTypes from 'prop-types'
+import client from '../../client'
+import groq from 'groq'
+import PropTypes from 'prop-types'
 
-// import MainContainer from '@/components/MainContainer'
+import MainContainer from '@/components/MainContainer'
+import PostContent from '@/scenes/PostContent'
 
-// const siteConfigQuery = `
-//   *[_id == "global-config"] {
-//     ...,
-//     logo{
-//       ...,
-//       "linkAlternative":link->link,
-//       "slug":link->page->pageSlug
+const Post = ({
+  config,
+  formQuery,
+  bodyPortableText,
+  postPreview,
+  recommendation,
+  releaseDate,
+  timeToRead,
+  title,
+  pageSlug
+}) => {
+  return (
+    <MainContainer config={config} connectWithUsForm={formQuery}>
+      <PostContent
+        bodyPortableText={bodyPortableText}
+        postPreview={postPreview}
+        recommendation={recommendation}
+        releaseDate={releaseDate}
+        timeToRead={timeToRead}
+        title={title}
+        pageSlug={pageSlug}
+      />
+    </MainContainer>
+  )
+}
 
-//     },
-//     blackNavigation,
-//     terms{
-//       ...,
-//       privacyPolicy{
-//         name,
-//         "link":link->link,
-//         "slug":link->page->pageSlug
-//       },
-//       termsOfUse{
-//         name,
-//         "link":link->link,
-//         "slug":link->page->pageSlug
-//       },
+export async function getStaticPaths() {
+  const paths = await client.fetch(groq`*[_type == "postPage" ][]{pageSlug}`).then((res) => {
+    return [...res]
+  })
 
-//     },
+  return {
+    paths: paths?.map(({pageSlug}) => ({params: {post: pageSlug}})),
+    fallback: true
+  }
+}
 
-//     ownGrowTransitionNavigation[]{
-//       name,
-//       "link":link->link,
-//       "slug":link->page->pageSlug
-//     },
+export async function getStaticProps({params}) {
+  const slug = params.post
+  const data = await client
+    .fetch(
+      groq`*[_type == "postPage" && pageSlug == "${slug}"][0]{
+          ...,
+        recommendation[]->{
+            bodyPortableText,
+            pageSlug,
+            title,
+            timeToRead,
+            releaseDate,
+            postPreview{
+                description,
+                image,
+                title
+            },
+            
+        }
+         
+      }
+          `
+    )
+    .then((res) => {
+      return {...res}
+    })
 
-//     mainNavigation{group[]{
-//       name,
-//       groupBoxName,
-//       groupList[]{
-//         name,
-//         "link":link->link,
-//         "slug":link->page->pageSlug
+  return {
+    props: {...data}
+  }
+}
 
-//     },
-//       "link":link->link,
-//       "slug":link->page->pageSlug
-//   }},
-//     footerNavigation{
-//       firstColumn{group[]{
-//         name,
-//         "link":link->link,
-//         "slug":link->page->pageSlug
-//     }},
-//       secondColumn{group[]{
-//         name,
-//         "link":link->link,
-//         "slug":link->page->pageSlug}}
-//     }
-//   }[0]
-//   `
+Post.propTypes = {
+  config: PropTypes.object,
+  formQuery: PropTypes.object,
+  bodyPortableText: PropTypes.array,
+  postPreview: PropTypes.object,
+  recommendation: PropTypes.array,
+  releaseDate: PropTypes.string,
+  timeToRead: PropTypes.string,
+  title: PropTypes.string,
+  pageSlug: PropTypes.string
+}
 
-// const siteFormQuery = `
-//   *[_type == "formList"][0]
-//   `
-
-// const Post = ({config, formQuery}) => {
-//   //   const router = useRouter()
-//   //   const {post} = router.query
-//   console.log(config)
-
-//   return (
-//     // <MainContainer config={config} connectWithUsForm={formQuery}>
-//     <span>dsvnskljj</span>
-//     // </MainContainer>
-//   )
-// }
-
-// export async function getStaticProps() {
-//   const data = await client
-//     .fetch(
-//       groq`*[_type == "postPage" ][0]
-//       `
-//       //   && pageSlug == ${post}
-//     )
-//     .then((res) => {
-//       return {...res}
-//     })
-
-//   const getConfig = async () => {
-//     const config = await client.fetch(siteConfigQuery).then((config) => {
-//       return config
-//     })
-//     const formQuery = await client.fetch(siteFormQuery).then((form) => {
-//       return form
-//     })
-
-//     pageProps.config = {...config, ...formQuery, name: 'mcmc'}
-//     pageProps.formQuery = formQuery.connectWithUsForm
-
-//     return {pageProps}
-//   }
-
-//   if (!data) {
-//     return {
-//       notFound: true
-//     }
-//   }
-
-//   const globalConfig = getConfig()
-//   return {
-//     props: {...data, ...globalConfig}
-//   }
-// }
-
-// export async function getStaticPaths() {
-//   const paths = await client.fetch(
-//     `*[_type == "postPage" && defined(pageSlug.current)[].pageSlug.current]`
-//   )
-
-//   return {
-//     paths: paths.map((slug) => ({params: {slug}})),
-//     fallback: true
-//   }
-// }
-
-// Post.propTypes = {
-//   PostContent: PropTypes.object
-// }
-
-// export default Post
+export default Post

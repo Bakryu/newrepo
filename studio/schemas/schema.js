@@ -19,6 +19,7 @@ import process from './documents/process'
 import transition from './documents/transition'
 import initialFees from './documents/initialFees'
 import page404 from './documents/page404'
+import post from './documents/post'
 
 // Object types
 import embedHTML from './objects/embedHTML'
@@ -32,6 +33,8 @@ import servicesItem from './objects/homePage/object/servicesItem'
 import blackNavigation from './objects/blackNavigation'
 import ownGrowTransitionPage from './objects/ownGrowTransitionPage/ownGrowTransitionPage'
 import video from './objects/video'
+import bodyPortableText from './objects/bodyPortableText'
+import postPreview from './objects/postPreview'
 //  page sections
 import homeHero from './objects/homePage/sections/homeHero'
 import homePartners from './objects/homePage/sections/homePartners'
@@ -70,6 +73,7 @@ export default createSchema({
     process,
     initialFees,
     page404,
+    post,
 
     // page elements
     homeHero,
@@ -88,6 +92,8 @@ export default createSchema({
     navigationItem,
     navigationGroup,
     blackNavigation,
-    video
+    video,
+    bodyPortableText,
+    postPreview
   ])
 })

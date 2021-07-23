@@ -22,7 +22,8 @@ const hiddenDocTypes = (listItem) =>
     'processPage',
     'transitionPage',
     'initialFeesPage',
-    'page404'
+    'page404',
+    'postPage'
   ].includes(listItem.getId())
 
 export default () =>
@@ -117,5 +118,10 @@ export default () =>
         .title('Routes')
         .schemaType('route')
         .child(S.documentTypeList('route').title('Routes')),
+      S.listItem()
+        .title('Posts')
+        .icon(MdDashboard)
+        .schemaType('postPage')
+        .child(S.documentTypeList('postPage').title('Post')),
       ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])

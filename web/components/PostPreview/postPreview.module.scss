@@ -1,0 +1,77 @@
+@import "@/styles/variables/all.scss";
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $black-color;
+    text-align: start;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    @media (min-width: $md) {
+    }
+}
+
+.title {
+    font-weight: bold;
+    font-size: $font-size-md;
+    line-height: 130%;
+    text-transform: uppercase;
+
+    @media (min-width: $md) {
+        font-size: $font-size-lg;
+        line-height: 108%;
+        max-width: 750px;
+        text-align: left;
+    }
+}
+
+.description {
+    display: block;
+    font-size: $font-size-md;
+    line-height: 150%;
+    padding-bottom: 16px;
+
+    @media (min-width: $md) {
+        font-size: $font-size-md;
+        line-height: 150%;
+        max-width: 736px;
+    }
+}
+
+.dateWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    max-width: 736px;
+    padding: 16px 0;
+
+    font-size: $font-size-sm;
+    line-height: 160%;
+    color: $black-color;
+
+    :first-child {
+        position: relative;
+        padding-right: 30px;
+        &::after {
+            display: block;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: $black-color;
+            transform: translate(50%, -50%);
+        }
+    }
+}
+
+.image {
+    div {
+        width: 100%;
+    }
+}
