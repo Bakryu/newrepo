@@ -14,7 +14,8 @@ const Post = ({
   releaseDate,
   timeToRead,
   title,
-  pageSlug
+  pageSlug,
+  previewGroupTitle
 }) => {
   return (
     <MainContainer config={config} connectWithUsForm={formQuery}>
@@ -26,6 +27,7 @@ const Post = ({
         timeToRead={timeToRead}
         title={title}
         pageSlug={pageSlug}
+        previewGroupTitle={previewGroupTitle}
       />
     </MainContainer>
   )
@@ -50,6 +52,7 @@ export async function getStaticProps({params}) {
           ...,
         recommendation[]->{
             bodyPortableText,
+            previewGroupTitle,
             pageSlug,
             title,
             timeToRead,

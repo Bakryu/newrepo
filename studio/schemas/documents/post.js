@@ -34,6 +34,11 @@ export default {
       of: [{ name: 'post', type: 'reference', to: [{ type: 'postPage' }] }]
     },
     {
+      name: 'previewGroupTitle',
+      type: 'string',
+      title: 'Preview Group Title'
+    },
+    {
       name: 'postPreview',
       type: 'postPreview',
       title: 'Post Preview'

@@ -5,13 +5,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 24px 0;
+
     color: $black-color;
     text-align: start;
-    margin-bottom: 20px;
     cursor: pointer;
-
-    @media (min-width: $md) {
-    }
+    border-top: 2px solid $black-color;
 }
 
 .title {
@@ -41,10 +40,14 @@
     }
 }
 
+.textWrapper {
+    width: 100%;
+}
+
 .dateWrapper {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     max-width: 736px;
     padding: 16px 0;
 
@@ -74,4 +77,10 @@
     div {
         width: 100%;
     }
+}
+
+.cardStyle {
+    flex-direction: column-reverse;
+    border-top: none;
+    border-bottom: 2px solid $black-color;
 }

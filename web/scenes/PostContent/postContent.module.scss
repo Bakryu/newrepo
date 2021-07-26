@@ -48,7 +48,7 @@
 .dateWrapper {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     max-width: 736px;
     margin: 24px auto 0;
     font-size: $font-size-sm;
@@ -124,5 +124,20 @@
         & > div {
             width: 30%;
         }
+    }
+}
+
+.previewGroupTitle {
+    padding: 80px 0 32px;
+    font-weight: bold;
+    text-align: start;
+    font-size: $font-size-l;
+    line-height: 130%;
+    text-transform: uppercase;
+
+    @media (min-width: $md) {
+        padding: 116px 0 56px;
+        font-size: $font-size-xl;
+        line-height: 108%;
     }
 }
