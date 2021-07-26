@@ -29,7 +29,7 @@ const PostContent = ({
       />
       <h1 className={styles.previewGroupTitle}>{previewGroupTitle}</h1>
       <div className={styles.cardWrapper}>
-        {recommendation.map(({pageSlug, postPreview, releaseDate, timeToRead}, idx) => {
+        {recommendation?.map(({pageSlug, postPreview, releaseDate, timeToRead}, idx) => {
           return (
             <PostPreview
               pageSlug={pageSlug}

@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 
   return {
     paths: paths?.map(({pageSlug}) => ({params: {post: pageSlug}})),
-    fallback: true
+    fallback: false
   }
 }
 
