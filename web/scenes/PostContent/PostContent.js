@@ -29,18 +29,21 @@ const PostContent = ({
       />
       <h1 className={styles.previewGroupTitle}>{previewGroupTitle}</h1>
       <div className={styles.cardWrapper}>
-        {recommendation?.map(({pageSlug, postPreview, releaseDate, timeToRead}, idx) => {
-          return (
-            <PostPreview
-              pageSlug={pageSlug}
-              postPreview={postPreview}
-              releaseDate={releaseDate}
-              timeToRead={timeToRead}
-              key={idx}
-              imageSize={{width: 320, height: 210}}
-            />
-          )
-        })}
+        {recommendation?.map(
+          ({pageSlug, postPreview, releaseDate, timeToRead, postReference}, idx) => {
+            return (
+              <PostPreview
+                pageSlug={pageSlug}
+                postPreview={postPreview}
+                releaseDate={releaseDate}
+                timeToRead={timeToRead}
+                key={idx}
+                imageSize={{width: 320, height: 210}}
+                category={postReference.topic.itemName}
+              />
+            )
+          }
+        )}
       </div>
       <DecorElements />
     </section>

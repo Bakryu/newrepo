@@ -23,7 +23,10 @@ const hiddenDocTypes = (listItem) =>
     'transitionPage',
     'initialFeesPage',
     'page404',
-    'postPage'
+    'postPage',
+    'postCategoriesType',
+    'postCategoriesTopic',
+    'postCategoriesIndustry'
   ].includes(listItem.getId())
 
 export default () =>
@@ -123,5 +126,30 @@ export default () =>
         .icon(MdDashboard)
         .schemaType('postPage')
         .child(S.documentTypeList('postPage').title('Post')),
+
+      S.listItem()
+        .title('Blog Categories')
+        .icon(MdSettings)
+        .child(
+          S.list()
+            .title('Category')
+            .items([
+              S.listItem()
+                .title('Type')
+                .icon(MdDashboard)
+                .schemaType('postCategoriesType')
+                .child(S.documentTypeList('postCategoriesType').title('Type')),
+              S.listItem()
+                .title('Topic')
+                .icon(MdDashboard)
+                .schemaType('postCategoriesTopic')
+                .child(S.documentTypeList('postCategoriesTopic').title('Topic')),
+              S.listItem()
+                .title('Industry')
+                .icon(MdDashboard)
+                .schemaType('postCategoriesIndustry')
+                .child(S.documentTypeList('postCategoriesIndustry').title('Industry'))
+            ])
+        ),
       ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])

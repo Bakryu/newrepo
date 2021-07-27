@@ -5,13 +5,22 @@ import classNames from 'classnames/bind'
 import NextImage from '@/components/NextImage'
 import styles from './postPreview.module.scss'
 
-const PostPreview = ({postPreview, releaseDate, timeToRead, pageSlug, imageSize, cardStyle}) => {
+const PostPreview = ({
+  postPreview,
+  releaseDate,
+  timeToRead,
+  pageSlug,
+  imageSize,
+  cardStyle,
+  category
+}) => {
   const {image, title, description} = postPreview
   return (
     <Link href={pageSlug}>
       <div className={classNames(styles.card, styles[cardStyle])}>
         <div className={styles.textWrapper}>
-          <h1 className={styles.title}>{title}</h1>
+          <h3 className={styles.category}>{category}</h3>
+          <h2 className={styles.title}>{title}</h2>
           <div className={styles.dateWrapper}>
             <span>{releaseDate}</span>
             <span> {timeToRead}</span>

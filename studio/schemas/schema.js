@@ -20,6 +20,9 @@ import transition from './documents/transition'
 import initialFees from './documents/initialFees'
 import page404 from './documents/page404'
 import post from './documents/post'
+import postCategoriesType from './documents/postCategoriesType'
+import postCategoriesTopic from './documents/postCategoriesTopic'
+import postCategoriesIndustry from './documents/postCategoriesIndustry'
 
 // Object types
 import embedHTML from './objects/embedHTML'
@@ -35,6 +38,7 @@ import ownGrowTransitionPage from './objects/ownGrowTransitionPage/ownGrowTransi
 import video from './objects/video'
 import bodyPortableText from './objects/bodyPortableText'
 import postPreview from './objects/postPreview'
+
 //  page sections
 import homeHero from './objects/homePage/sections/homeHero'
 import homePartners from './objects/homePage/sections/homePartners'
@@ -74,6 +78,9 @@ export default createSchema({
     initialFees,
     page404,
     post,
+    postCategoriesType,
+    postCategoriesTopic,
+    postCategoriesIndustry,
 
     // page elements
     homeHero,

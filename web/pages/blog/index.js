@@ -3,19 +3,55 @@ import groq from 'groq'
 import PropTypes from 'prop-types'
 
 import MainContainer from '@/components/MainContainer'
+import BlogContent from '@/scenes/BlogContent'
 
-const Blog = ({config, formQuery}) => {
+const Blog = ({config, formQuery, filter, posts}) => {
   return (
     <MainContainer config={config} connectWithUsForm={formQuery}>
-      <span>Blog</span>
+      <BlogContent filter={filter} posts={posts} />
     </MainContainer>
   )
 }
 
 export async function getStaticProps() {
-  const data = await client.fetch(groq`*[_type == "blogPage"][0]`).then((res) => {
-    return {...res}
-  })
+  const data = await client
+    .fetch(
+      groq`{"posts": *[_type == "postPage" ][]{
+
+      pageSlug,
+      postPreview,
+      releaseDate,
+      timeToRead,
+      postReference{
+        topic->{itemName},
+        type->{itemName},
+        industry->{itemName},
+       },
+   
+        'filter': *[_type == 'postCategoriesType' ][]{
+          ...,
+        }
+     
+  },
+  "filter": {
+    "type" :*[_type == 'postCategoriesType' ][]{
+      groupName,
+      itemName
+  },
+    "topic" :*[_type == 'postCategoriesTopic' ][]{
+      groupName,
+      itemName
+  },
+    "industry" :*[_type == 'postCategoriesIndustry' ][]{
+      groupName,
+      itemName
+  },
+}
+}`
+    )
+    .then((res) => {
+      return {...res}
+    })
 
   if (!data) {
     return {
@@ -29,7 +65,10 @@ export async function getStaticProps() {
 }
 
 Blog.propTypes = {
-  Blog: PropTypes.object
+  config: PropTypes.object,
+  formQuery: PropTypes.object,
+  filter: PropTypes.object,
+  posts: PropTypes.array
 }
 
 export default Blog

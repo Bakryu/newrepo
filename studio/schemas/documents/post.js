@@ -42,6 +42,31 @@ export default {
       name: 'postPreview',
       type: 'postPreview',
       title: 'Post Preview'
+    },
+    {
+      name: 'postReference',
+      type: 'object',
+      title: 'Post Categories',
+      fields: [
+        {
+          name: 'type',
+          type: 'reference',
+          title: 'Type Post',
+          to: [{ type: 'postCategoriesType' }]
+        },
+        {
+          name: 'topic',
+          type: 'reference',
+          title: 'Topic Post',
+          to: [{ type: 'postCategoriesTopic' }]
+        },
+        {
+          name: 'industry',
+          type: 'reference',
+          title: 'Industry Post',
+          to: [{ type: 'postCategoriesIndustry' }]
+        }
+      ]
     }
   ],
   preview: {

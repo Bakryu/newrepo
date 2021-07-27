@@ -125,6 +125,24 @@
             width: 30%;
         }
     }
+
+    :nth-child(3n + 1) {
+        h3 {
+            color: $green-color;
+        }
+    }
+
+    :nth-child(3n + 2) {
+        h3 {
+            color: $red-color;
+        }
+    }
+
+    :nth-child(3n + 3) {
+        h3 {
+            color: $yellow-color;
+        }
+    }
 }
 
 .previewGroupTitle {

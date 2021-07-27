@@ -15,7 +15,8 @@ const Post = ({
   timeToRead,
   title,
   pageSlug,
-  previewGroupTitle
+  previewGroupTitle,
+  category
 }) => {
   return (
     <MainContainer config={config} connectWithUsForm={formQuery}>
@@ -28,6 +29,7 @@ const Post = ({
         title={title}
         pageSlug={pageSlug}
         previewGroupTitle={previewGroupTitle}
+        category={category.topic.itemName}
       />
     </MainContainer>
   )
@@ -49,7 +51,17 @@ export async function getStaticProps({params}) {
   const data = await client
     .fetch(
       groq`*[_type == "postPage" && pageSlug == "${slug}"][0]{
-          ...,
+        bodyPortableText,
+         pageSlug,
+         postPreview,
+         previewGroupTitle,
+         recommendation,
+         releaseDate,
+         timeToRead,
+         title,
+         "category":postReference{
+           topic->{itemName}
+          },
         recommendation[]->{
             bodyPortableText,
             previewGroupTitle,
@@ -57,6 +69,11 @@ export async function getStaticProps({params}) {
             title,
             timeToRead,
             releaseDate,
+            postReference{
+              topic->{itemName},
+              type->{itemName},
+              industry->{itemName},
+             },
             postPreview{
                 description,
                 image,
@@ -66,7 +83,7 @@ export async function getStaticProps({params}) {
         }
          
       }
-          `
+    `
     )
     .then((res) => {
       return {...res}
@@ -86,7 +103,8 @@ Post.propTypes = {
   releaseDate: PropTypes.string,
   timeToRead: PropTypes.string,
   title: PropTypes.string,
-  pageSlug: PropTypes.string
+  pageSlug: PropTypes.string,
+  category: PropTypes.string
 }
 
 export default Post
