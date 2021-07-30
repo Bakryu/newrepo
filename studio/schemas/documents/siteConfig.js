@@ -149,6 +149,21 @@ export default {
           name: 'buttonGoToHomePage',
           type: 'string',
           title: 'Go To Home Page'
+        },
+        {
+          name: 'buttonSearch',
+          type: 'string',
+          title: 'Search'
+        },
+        {
+          name: 'buttonSubscribe',
+          type: 'string',
+          title: 'Subscribe'
+        },
+        {
+          name: 'buttonReadMore',
+          type: 'string',
+          title: 'Read More'
         }
       ]
     }

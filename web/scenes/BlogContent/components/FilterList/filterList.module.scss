@@ -3,6 +3,11 @@
 .list {
     display: flex;
     flex-direction: column;
+    &:first-child {
+        .title {
+            margin-top: 20px;
+        }
+    }
 }
 
 .title {

@@ -89,6 +89,8 @@
 
 .cardStyle {
     flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin-bottom: 40px;
     border-top: none;
     border-bottom: 2px solid $black-color;
 }

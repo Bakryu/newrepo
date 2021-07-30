@@ -10,13 +10,15 @@ const PostPreview = ({
   releaseDate,
   timeToRead,
   pageSlug,
-  imageSize,
+  imageSize = {width: 288, height: 210},
   cardStyle,
-  category
+  category,
+  slug
 }) => {
   const {image, title, description} = postPreview
+  const currentSlug = slug ? `${slug}/${pageSlug}` : pageSlug
   return (
-    <Link href={pageSlug}>
+    <Link href={currentSlug}>
       <div className={classNames(styles.card, styles[cardStyle])}>
         <div className={styles.textWrapper}>
           <h3 className={styles.category}>{category}</h3>
@@ -37,6 +39,7 @@ PostPreview.propTypes = {
   postPreview: PropTypes.object,
   releaseDate: PropTypes.string,
   timeToRead: PropTypes.string,
-  pageSlug: PropTypes.string
+  pageSlug: PropTypes.string,
+  slug: PropTypes.string
 }
 export default PostPreview

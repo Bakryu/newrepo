@@ -104,7 +104,7 @@ Post.propTypes = {
   timeToRead: PropTypes.string,
   title: PropTypes.string,
   pageSlug: PropTypes.string,
-  category: PropTypes.string
+  category: PropTypes.object
 }
 
 export default Post

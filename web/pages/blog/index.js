@@ -5,10 +5,10 @@ import PropTypes from 'prop-types'
 import MainContainer from '@/components/MainContainer'
 import BlogContent from '@/scenes/BlogContent'
 
-const Blog = ({config, formQuery, filter, posts}) => {
+const Blog = ({config, formQuery, filter, posts, blog}) => {
   return (
     <MainContainer config={config} connectWithUsForm={formQuery}>
-      <BlogContent filter={filter} posts={posts} />
+      <BlogContent filter={filter} posts={posts} button={config.buttons} blog={blog} />
     </MainContainer>
   )
 }
@@ -33,6 +33,21 @@ export async function getStaticProps() {
         }
      
   },
+  "blog":*[_type == 'blogPage'][0]{
+    pageSlug,
+    title,
+    suggestions,
+    description,
+    badSearch,
+    mainCard->{
+      pageSlug,
+      postPreview,
+      releaseDate,
+      timeToRead,
+      "category":postReference.topic->itemName
+    }
+},
+
   "filter": {
     "type" :*[_type == 'postCategoriesType' ][]{
       groupName,
@@ -68,6 +83,7 @@ Blog.propTypes = {
   config: PropTypes.object,
   formQuery: PropTypes.object,
   filter: PropTypes.object,
+  blog: PropTypes.object,
   posts: PropTypes.array
 }
 
